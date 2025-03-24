@@ -13,24 +13,27 @@ const canvasHeight = 500;
  */
 
 const letterA = {
-  "size": 80,
-  "offsetx": 0,
-  "offsety": 35
+  "size": 40,
+  "offsetx": 55,
+  "offsety": 40,
+  "circle": 50,
 }
 
 const letterB = {
-  "size": 150,
-  "offsetx": 0,
-  "offsety": -145
+  "size": 75,
+  "offsetx": -10,
+  "offsety": 20,
+  "circle": 40,
 }
 
 const letterC = {
-  "size": 100,
-  "offsetx": 30,
-  "offsety": 0
+  "size": 60,
+  "offsetx": 50,
+  "offsety": -20,
+  "circle": 30,
 }
 
-const backgroundColor  = "#acf2e7";
+const backgroundColor  = "#ccd5e6";
 
 const darkGreen  = "#26b29d";
 const lightGreen  = "#30dfc4";
@@ -68,12 +71,19 @@ function drawLetter(posx, posy, letterData) {
   let size2 = letterData["size"];
   let pos2x = posx + letterData["offsetx"];
   let pos2y = posy + letterData["offsety"];
+  let circleSize = letterData["circle"];
 
   // draw two circles
-  fill(darkGreen);
-  ellipse(posx, posy, 150, 150);
-  fill(lightGreen);
-  ellipse(pos2x, pos2y, size2, size2);
+  // noStroke()
+  // fill(darkGreen);
+  // ellipse(posx, posy, 150, 150);
+  // fill(lightGreen);
+  noFill();
+  stroke(255);
+  strokeWeight(5);
+  line(posx, posy, pos2x, pos2y);
+  ellipseMode(CORNER);
+  ellipse(pos2x, pos2y, circleSize, circleSize);
 }
 
 function keyTyped() {
