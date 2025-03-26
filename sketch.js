@@ -13,66 +13,54 @@ const canvasHeight = 500;
  */
 
 const letterA = {
-  "firstAnchorX": 40,
-  "firstAnchorY": 0,
+  "AnchorX": 40,
+  "AnchorY": 0,
   "firstControlX": -100,
-  "firstControlY": -20,
-  "secondControlX": -60,
+  "firstControlY": -30,
+  "secondControlX": -50,
   "secondControlY": 200,
-  "secondAnchorX": 40,
-  "secondAnchorY": 0,
 
   "stem": true,
-  "twoFirstAnchorX": 40,
-  "twoFirstAnchorY": 0,
+  "secondAnchorX": 40,
+  "secondAnchorY": 0,
   "twoFirstControlX": 20,
   "twoFirstControlY": -20,
   "twoSecondControlX": 40,
   "twoSecondControlY": 200,
-  "twoSecondAnchorX": 40,
-  "twoSecondAnchorY": 0,
 }
 
 const letterB = {
-  "firstAnchorX": 0,
-  "firstAnchorY": 60,
+  "AnchorX": 0,
+  "AnchorY": 60,
   "firstControlX": 80,
   "firstControlY": -120,
   "secondControlX": 100,
   "secondControlY": 150,
-  "secondAnchorX": 0,
-  "secondAnchorY": 60,
 
   "stem": true,
-  "twoFirstAnchorX": 0,
-  "twoFirstAnchorY": 60,
+  "secondAnchorX": 0,
+  "secondAnchorY": 60,
   "twoFirstControlX": 40,
   "twoFirstControlY": -180,
   "twoSecondControlX": 10,
   "twoSecondControlY": -100,
-  "twoSecondAnchorX": 0,
-  "twoSecondAnchorY": 60,
 }
 
 const letterC = {
-  "firstAnchorX": 30,
-  "firstAnchorY": 0,
-  "firstControlX": -80,
-  "firstControlY": -20,
-  "secondControlX": -80,
-  "secondControlY": 100,
-  "secondAnchorX": 30,
-  "secondAnchorY": 80,
+  "AnchorX": 30,
+  "AnchorY": 0,
+  "firstControlX": -60,
+  "firstControlY": -120,
+  "secondControlX": -100,
+  "secondControlY": 200,
   
   "stem": false,
-  "twoFirstAnchorX": 0,
-  "twoFirstAnchorY": 0,
+  "secondAnchorX": 0,
+  "secondAnchorY": 0,
   "twoFirstControlX": 0,
   "twoFirstControlY": 0,
   "twoSecondControlX": 0,
   "twoSecondControlY": 0,
-  "twoSecondAnchorX": 0,
-  "twoSecondAnchorY": 0,
 }
 
 const backgroundColor  = "#ccd5e6";
@@ -86,7 +74,7 @@ function setup () {
 
   // color/stroke setup
   stroke(strokeColor);
-  strokeWeight(1);
+  strokeWeight(2);
   noFill();
 
   // with no animation, redrawing the screen is not necessary
@@ -109,32 +97,28 @@ function draw () {
 
 function drawLetter(posx, posy, letterData) {
   // let spacing = letterData["gap"];
-  let firstBezierAnchorX = posx + letterData["firstAnchorX"];
-  let firstBezierAnchorY = posy + letterData["firstAnchorY"];
+  let firstBezierAnchorX = posx + letterData["AnchorX"];
+  let firstBezierAnchorY = posy + letterData["AnchorY"];
   let firstBezierControlX = posx + letterData["firstControlX"];
   let firstBezierControlY = posy + letterData["firstControlY"];
   let secondBezierControlX = posx + letterData["secondControlX"];
   let secondBezierControlY = posy + letterData["secondControlY"];
-  let secondBezierAnchorX = posx + letterData["secondAnchorX"];
-  let secondBezierAnchorY = posy + letterData["secondAnchorY"];
  
-  let twoFirstBezierAnchorX = posx + letterData["twoFirstAnchorX"];
-  let twoFirstBezierAnchorY = posy + letterData["twoFirstAnchorY"];
+  let twoFirstBezierAnchorX = posx + letterData["secondAnchorX"];
+  let twoFirstBezierAnchorY = posy + letterData["secondAnchorY"];
   let twoFirstBezierControlX = posx + letterData["twoFirstControlX"];
   let twoFirstBezierControlY = posy + letterData["twoFirstControlY"];
   let twoSecondBezierControlX = posx + letterData["twoSecondControlX"];
   let twoSecondBezierControlY = posy + letterData["twoSecondControlY"];
-  let twoSecondBezierAnchorX = posx + letterData["twoSecondAnchorX"];
-  let twoSecondBezierAnchorY = posy + letterData["twoSecondAnchorY"];
   let drawStem = letterData["stem"]
 
-  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX, firstBezierControlY, secondBezierControlX, secondBezierControlY, secondBezierAnchorX, secondBezierAnchorY);
-  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + spacing, firstBezierControlY + spacing, secondBezierControlX + spacing, secondBezierControlY - 2 * spacing, secondBezierAnchorX, secondBezierAnchorY);
-  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + 2 * spacing, firstBezierControlY + 2 * spacing, secondBezierControlX + 2 * spacing, secondBezierControlY - 4 * spacing, secondBezierAnchorX, secondBezierAnchorY);
+  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX, firstBezierControlY, secondBezierControlX, secondBezierControlY, firstBezierAnchorX, firstBezierAnchorY);
+  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + spacing, firstBezierControlY + spacing, secondBezierControlX + spacing, secondBezierControlY - 2 * spacing, firstBezierAnchorX, firstBezierAnchorY);
+  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + 2 * spacing, firstBezierControlY + 2 * spacing, secondBezierControlX + 2 * spacing, secondBezierControlY - 4 * spacing, firstBezierAnchorX, firstBezierAnchorY);
   if (drawStem == true){
-    bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX, twoFirstBezierControlY, twoSecondBezierControlX, twoSecondBezierControlY, twoSecondBezierAnchorX, twoSecondBezierAnchorY);
-    bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + spacing, twoFirstBezierControlY + spacing, twoSecondBezierControlX + spacing, twoSecondBezierControlY - 2 * spacing, twoSecondBezierAnchorX, twoSecondBezierAnchorY);
-    bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + 2 * spacing, twoFirstBezierControlY + 2 * spacing, twoSecondBezierControlX + 2 * spacing, twoSecondBezierControlY - 4 * spacing, twoSecondBezierAnchorX, twoSecondBezierAnchorY);  
+    bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX, twoFirstBezierControlY, twoSecondBezierControlX, twoSecondBezierControlY, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
+    bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + spacing, twoFirstBezierControlY + spacing, twoSecondBezierControlX + spacing, twoSecondBezierControlY - 2 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
+    bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + 2 * spacing, twoFirstBezierControlY + 2 * spacing, twoSecondBezierControlX + 2 * spacing, twoSecondBezierControlY - 4 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);  
   }
   }
 
