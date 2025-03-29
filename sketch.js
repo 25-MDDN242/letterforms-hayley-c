@@ -120,19 +120,6 @@ function drawLetter(posx, posy, letterData) {
     bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + spacing, twoFirstBezierControlY + spacing, twoSecondBezierControlX + spacing, twoSecondBezierControlY - 2 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
     bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + 2 * spacing, twoFirstBezierControlY + 2 * spacing, twoSecondBezierControlX + 2 * spacing, twoSecondBezierControlY - 4 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);  
   }
-
-  push();
-  translate(width/2, height/2);
-  let c = 100*0.551915024494;
-  beginShape();
-  // vertex(0, 100);
-  // bezierVertex(-c, 100, 100, -c, 100, 0);
-  // bezierVertex(100,c,-c,-100,0,-100);
-  vertex(0, 100);
-  bezierVertex(c, 100, 100, c, 100, 0);
-  bezierVertex(100,-c,c,-100,0,-100);
-  endShape();
-  pop();
   }
 
 function keyTyped() {
