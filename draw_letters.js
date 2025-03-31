@@ -19,98 +19,88 @@ const spacing = 10;
  * from (0,0) to (100, 200)
  */
 function drawLetter(letterData) {
-  // color/stroke setup
-  // stroke(255);
-  // strokeWeight(2);
-  // noFill();
-
-  // let firstBezierAnchorX = 0 + letterData["AnchorX"];
-  // let firstBezierAnchorY = 150 + letterData["AnchorY"];
-  // let firstBezierControlX = 0 + letterData["firstControlX"];
-  // let firstBezierControlY = 150 + letterData["firstControlY"];
-  // let secondBezierControlX = 0 + letterData["secondControlX"];
-  // let secondBezierControlY = 150 + letterData["secondControlY"];
- 
-  // let twoFirstBezierAnchorX = 0 + letterData["secondAnchorX"];
-  // let twoFirstBezierAnchorY = 150 + letterData["secondAnchorY"];
-  // let twoFirstBezierControlX = 0 + letterData["twoFirstControlX"];
-  // let twoFirstBezierControlY = 150 + letterData["twoFirstControlY"];
-  // let twoSecondBezierControlX = 0 + letterData["twoSecondControlX"];
-  // let twoSecondBezierControlY = 150 + letterData["twoSecondControlY"];
-
-  // bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX, firstBezierControlY, secondBezierControlX, secondBezierControlY, firstBezierAnchorX, firstBezierAnchorY);
-  // bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + spacing, firstBezierControlY + spacing, secondBezierControlX + spacing, secondBezierControlY - 2 * spacing, firstBezierAnchorX, firstBezierAnchorY);
-  // bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + 2 * spacing, firstBezierControlY + 2 * spacing, secondBezierControlX + 2 * spacing, secondBezierControlY - 4 * spacing, firstBezierAnchorX, firstBezierAnchorY);
-
-  // bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX, twoFirstBezierControlY, twoSecondBezierControlX, twoSecondBezierControlY, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
-  // bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + spacing, twoFirstBezierControlY + spacing, twoSecondBezierControlX + spacing, twoSecondBezierControlY - 2 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
-  // bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + 2 * spacing, twoFirstBezierControlY + 2 * spacing, twoSecondBezierControlX + 2 * spacing, twoSecondBezierControlY - 4 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);  
-
-
-
-  angleMode(DEGREES);
-  let teardropSizeX = letterData["teardropScaleX"];
-  let teardropSizeY = letterData["teardropScaleY"];
-  let teardropTranslateX = letterData["teardropX"];
-  let teardropTranslateY = letterData["teardropY"];
-  let teardropSpin = letterData["teardropRotate"];
-  let one2X = letterData["bezierOne2X"];
-  let one2Y = letterData["bezierOne2Y"];
-  let one3X = letterData["bezierOne3X"];
-  let one3Y = letterData["bezierOne3Y"];
-  let one4X = letterData["bezierOne4X"];
-  let one4Y = letterData["bezierOne4Y"];
-  let two2X = letterData["bezierTwo2X"];
-  let two2Y = letterData["bezierTwo2Y"];
-  let two3X = letterData["bezierTwo3X"];
-  let two3Y = letterData["bezierTwo3Y"];
-  let two4X = letterData["bezierTwo4X"];
-  let two4Y = letterData["bezierTwo4Y"];
-
-  
-  push();
-  translate(teardropTranslateX, teardropTranslateY);
-  scale(teardropSizeX, teardropSizeY);
-  rotate(teardropSpin);
-  noStroke();
-  fill(255);
-  let c = 40*0.551915024494;
-  beginShape();
-  vertex(0, 40);
-  bezierVertex(-c, 40, -40, c, -40, 0);
-  bezierVertex(-40, -c, -c, -40, 0, -40);
-  bezierVertex(30, -40, 30, 0, 0, 0);
-  bezierVertex(-30, 0, -30, 40, 0, 40);
-  endShape();
+  color/stroke setup
   stroke(255);
-  strokeWeight(3);
+  strokeWeight(2);
   noFill();
-  // line(-8, 38, 50, 100)
-  // beginShape();
-  vertex(-5, 40);
-  bezierVertex(one2X, one2Y, one3X, one3Y, one4X, one4Y);
-  bezierVertex(two2X, two2Y, two3X, two3Y, two4X, two4Y);
-  // bezierVertex(c, 40, 40, c, 40, 0);
-  // bezierVertex(40, -c, c, -40, 0, -40);
-  endShape();
-  strokeWeight(5);
-  stroke(255, 0, 255);
-  point(one2X, one2Y);
-  point(one3X, one3Y);
-  stroke(0, 255, 255);
-  point(two2X, two2Y);
-  point(two3X, two3Y);
-  pop();
+
+  let firstBezierAnchorX = 0 + letterData["AnchorX"];
+  let firstBezierAnchorY = 150 + letterData["AnchorY"];
+  let firstBezierControlX = 0 + letterData["firstControlX"];
+  let firstBezierControlY = 150 + letterData["firstControlY"];
+  let secondBezierControlX = 0 + letterData["secondControlX"];
+  let secondBezierControlY = 150 + letterData["secondControlY"];
+ 
+  let twoFirstBezierAnchorX = 0 + letterData["secondAnchorX"];
+  let twoFirstBezierAnchorY = 150 + letterData["secondAnchorY"];
+  let twoFirstBezierControlX = 0 + letterData["twoFirstControlX"];
+  let twoFirstBezierControlY = 150 + letterData["twoFirstControlY"];
+  let twoSecondBezierControlX = 0 + letterData["twoSecondControlX"];
+  let twoSecondBezierControlY = 150 + letterData["twoSecondControlY"];
+
+  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX, firstBezierControlY, secondBezierControlX, secondBezierControlY, firstBezierAnchorX, firstBezierAnchorY);
+  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + spacing, firstBezierControlY + spacing, secondBezierControlX + spacing, secondBezierControlY - 2 * spacing, firstBezierAnchorX, firstBezierAnchorY);
+  bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + 2 * spacing, firstBezierControlY + 2 * spacing, secondBezierControlX + 2 * spacing, secondBezierControlY - 4 * spacing, firstBezierAnchorX, firstBezierAnchorY);
+
+  bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX, twoFirstBezierControlY, twoSecondBezierControlX, twoSecondBezierControlY, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
+  bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + spacing, twoFirstBezierControlY + spacing, twoSecondBezierControlX + spacing, twoSecondBezierControlY - 2 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
+  bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + 2 * spacing, twoFirstBezierControlY + 2 * spacing, twoSecondBezierControlX + 2 * spacing, twoSecondBezierControlY - 4 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);  
+
+
+
+  // angleMode(DEGREES);
+  // let teardropSizeX = letterData["teardropScaleX"];
+  // let teardropSizeY = letterData["teardropScaleY"];
+  // let teardropTranslateX = letterData["teardropX"];
+  // let teardropTranslateY = letterData["teardropY"];
+  // let teardropSpin = letterData["teardropRotate"];
+  // let one2X = letterData["bezierOne2X"];
+  // let one2Y = letterData["bezierOne2Y"];
+  // let one3X = letterData["bezierOne3X"];
+  // let one3Y = letterData["bezierOne3Y"];
+  // let one4X = letterData["bezierOne4X"];
+  // let one4Y = letterData["bezierOne4Y"];
+  // let two2X = letterData["bezierTwo2X"];
+  // let two2Y = letterData["bezierTwo2Y"];
+  // let two3X = letterData["bezierTwo3X"];
+  // let two3Y = letterData["bezierTwo3Y"];
+  // let two4X = letterData["bezierTwo4X"];
+  // let two4Y = letterData["bezierTwo4Y"];
+
   
-  // scale(-1, -1);
-  // fill(0);
+  // push();
+  // translate(teardropTranslateX, teardropTranslateY);
+  // scale(teardropSizeX, teardropSizeY);
+  // rotate(teardropSpin);
+  // noStroke();
+  // fill(255);
+  // let c = 40*0.551915024494;
   // beginShape();
-  // vertex(0, 100);
-  // bezierVertex(-c, 100, -100, c, -100, 0);
-  // bezierVertex(-100, -c, -c, -100, 0, -100);
-  // bezierVertex(75, -100, 75, 0, 0, 0);
-  // bezierVertex(-75, 0, -75, 100, 0, 100);
+  // vertex(0, 40);
+  // bezierVertex(-c, 40, -40, c, -40, 0);
+  // bezierVertex(-40, -c, -c, -40, 0, -40);
+  // bezierVertex(30, -40, 30, 0, 0, 0);
+  // bezierVertex(-30, 0, -30, 40, 0, 40);
   // endShape();
+  // stroke(255);
+  // strokeWeight(3);
+  // noFill();
+  // // line(-8, 38, 50, 100)
+  // // beginShape();
+  // vertex(-5, 40);
+  // bezierVertex(one2X, one2Y, one3X, one3Y, one4X, one4Y);
+  // bezierVertex(two2X, two2Y, two3X, two3Y, two4X, two4Y);
+  // // bezierVertex(c, 40, 40, c, 40, 0);
+  // // bezierVertex(40, -c, c, -40, 0, -40);
+  // endShape();
+  // strokeWeight(5);
+  // stroke(255, 0, 255);
+  // point(one2X, one2Y);
+  // point(one3X, one3Y);
+  // stroke(0, 255, 255);
+  // point(two2X, two2Y);
+  // point(two3X, two3Y);
+  // pop();
 
 }
 
