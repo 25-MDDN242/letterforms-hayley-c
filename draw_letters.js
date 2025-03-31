@@ -19,21 +19,10 @@ const spacing = 10;
  * from (0,0) to (100, 200)
  */
 function drawLetter(letterData) {
-  // // color/stroke setup
+  // color/stroke setup
   // stroke(255);
   // strokeWeight(2);
   // noFill();
-
-  // // determine parameters for second circle
-  // let size2 = letterData["size"];
-  // let pos2x = 50  + letterData["offsetx"];
-  // let pos2y = 150 + letterData["offsety"];
-
-  // // draw two circles
-  // fill(darkGreen);
-  // ellipse(50, 150, 75, 75);
-  // fill(lightGreen);
-  // ellipse(pos2x, pos2y, size2, size2);
 
   // let firstBezierAnchorX = 0 + letterData["AnchorX"];
   // let firstBezierAnchorY = 150 + letterData["AnchorY"];
@@ -48,16 +37,17 @@ function drawLetter(letterData) {
   // let twoFirstBezierControlY = 150 + letterData["twoFirstControlY"];
   // let twoSecondBezierControlX = 0 + letterData["twoSecondControlX"];
   // let twoSecondBezierControlY = 150 + letterData["twoSecondControlY"];
-  // let drawStem = letterData["stem"]
 
   // bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX, firstBezierControlY, secondBezierControlX, secondBezierControlY, firstBezierAnchorX, firstBezierAnchorY);
   // bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + spacing, firstBezierControlY + spacing, secondBezierControlX + spacing, secondBezierControlY - 2 * spacing, firstBezierAnchorX, firstBezierAnchorY);
   // bezier(firstBezierAnchorX, firstBezierAnchorY, firstBezierControlX + 2 * spacing, firstBezierControlY + 2 * spacing, secondBezierControlX + 2 * spacing, secondBezierControlY - 4 * spacing, firstBezierAnchorX, firstBezierAnchorY);
-  // if (drawStem == true){
-  //   bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX, twoFirstBezierControlY, twoSecondBezierControlX, twoSecondBezierControlY, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
-  //   bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + spacing, twoFirstBezierControlY + spacing, twoSecondBezierControlX + spacing, twoSecondBezierControlY - 2 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
-  //   bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + 2 * spacing, twoFirstBezierControlY + 2 * spacing, twoSecondBezierControlX + 2 * spacing, twoSecondBezierControlY - 4 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);  
-  // }
+
+  // bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX, twoFirstBezierControlY, twoSecondBezierControlX, twoSecondBezierControlY, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
+  // bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + spacing, twoFirstBezierControlY + spacing, twoSecondBezierControlX + spacing, twoSecondBezierControlY - 2 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);
+  // bezier(twoFirstBezierAnchorX, twoFirstBezierAnchorY, twoFirstBezierControlX + 2 * spacing, twoFirstBezierControlY + 2 * spacing, twoSecondBezierControlX + 2 * spacing, twoSecondBezierControlY - 4 * spacing, twoFirstBezierAnchorX, twoFirstBezierAnchorY);  
+
+
+
   angleMode(DEGREES);
   let teardropSizeX = letterData["teardropScaleX"];
   let teardropSizeY = letterData["teardropScaleY"];

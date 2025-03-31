@@ -5,9 +5,19 @@
  * ["object_field", minimum_bound, maximum_bound]
  */
 const sliderInfo = [
-  ["size",       0, 100],
-  ["offsetx",  -30,  30],
-  ["offsety", -100, 100]
+  ["AnchorX",   0, 100],
+  ["AnchorY",   -150, 50],
+  ["firstControlX",   0, 100],
+  ["firstControlY"   -150, 50],
+  ["secondControlX",   0, 100],
+  ["secondControlY"   -150, 50],
+
+  ["secondAnchorX",   0, 100],
+  ["secondAnchorY"   -150, 50],
+  ["twoFirstControlX",   0, 100],
+  ["twoFirstControlY"   -150, 50],
+  ["twoSecondControlX",   0, 100],
+  ["twoSecondControlY"   -150, 50],
 ];
 
 // PROBABLY DON'T NEED TO EDIT ANYTHING ELSE. STOP HERE.
