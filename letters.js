@@ -1,7 +1,6 @@
 const alphabet = {
   "default": {
     "teardropScaleX": 1,
-    "teardropScaleY": 1,
     "teardropX": 50,
     "teardropY": 100,
     "teardropRotate": 0
@@ -11,7 +10,21 @@ const alphabet = {
     "teardropScaleY": 1,
     "teardropX": 50,
     "teardropY": 150,
-    "teardropRotate": 200
+    "teardropRotate": 200,
+
+    "bezierOne2X": 20,
+    "bezierOne2Y": 40,
+    "bezierOne3X": 35,
+    "bezierOne3Y": 32,
+    "bezierOne4X": 40,
+    "bezierOne4Y": 5,
+
+    "bezierTwo2X": 80,
+    "bezierTwo2Y": 20,
+    "bezierTwo3X": 35,
+    "bezierTwo3Y": 50,
+    "bezierTwo4X": 25,
+    "bezierTwo4Y": -55
 
     // "AnchorX": 80,
     // "AnchorY": -40,
@@ -29,11 +42,25 @@ const alphabet = {
     // "twoSecondControlY": 180
   },
   "B": {
-    "teardropScaleX": 1,
+    "teardropScaleX": -1,
     "teardropScaleY": 1,
     "teardropX": 50,
     "teardropY": 150,
-    "teardropRotate": 60
+    "teardropRotate": 60,
+
+    "bezierOne2X": 40,
+    "bezierOne2Y": 50,
+    "bezierOne3X": 75,
+    "bezierOne3Y": -10,
+    "bezierOne4X": 0,
+    "bezierOne4Y": -45,
+
+    "bezierTwo2X": -160,
+    "bezierTwo2Y": -165,
+    "bezierTwo3X": -120,
+    "bezierTwo3Y": -80,
+    "bezierTwo4X": 60,
+    "bezierTwo4Y": -20
 
     // "AnchorX": 10,
     // "AnchorY": 30,
@@ -53,9 +80,23 @@ const alphabet = {
   "C": {
     "teardropScaleX": .5,
     "teardropScaleY": .5,
-    "teardropX": 75,
+    "teardropX": 70,
     "teardropY": 125,
-    "teardropRotate": 150
+    "teardropRotate": 170,
+
+    "bezierOne2X": 30,
+    "bezierOne2Y": 60,
+    "bezierOne3X": 110,
+    "bezierOne3Y": 30,
+    "bezierOne4X": 120,
+    "bezierOne4Y": -20,
+
+    "bezierTwo2X": 140,
+    "bezierTwo2Y": -150,
+    "bezierTwo3X": 20,
+    "bezierTwo3Y": -170,
+    "bezierTwo4X": -25,
+    "bezierTwo4Y": -90
 
     // "AnchorX": 95,
     // "AnchorY": 0,
@@ -73,11 +114,25 @@ const alphabet = {
     // "twoSecondControlY": 0
   },
   "D": {
-    "teardropScaleX": -1,
+    "teardropScaleX": 1,
     "teardropScaleY": 1,
     "teardropX": 50,
     "teardropY": 150,
-    "teardropRotate": 200
+    "teardropRotate": 60,
+
+    "bezierOne2X": 40,
+    "bezierOne2Y": 50,
+    "bezierOne3X": 75,
+    "bezierOne3Y": -10,
+    "bezierOne4X": 0,
+    "bezierOne4Y": -45,
+
+    "bezierTwo2X": -160,
+    "bezierTwo2Y": -165,
+    "bezierTwo3X": -120,
+    "bezierTwo3Y": -80,
+    "bezierTwo4X": 60,
+    "bezierTwo4Y": -20
   },
 
   "E": {

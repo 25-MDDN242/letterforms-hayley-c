@@ -64,6 +64,18 @@ function drawLetter(letterData) {
   let teardropTranslateX = letterData["teardropX"];
   let teardropTranslateY = letterData["teardropY"];
   let teardropSpin = letterData["teardropRotate"];
+  let one2X = letterData["bezierOne2X"];
+  let one2Y = letterData["bezierOne2Y"];
+  let one3X = letterData["bezierOne3X"];
+  let one3Y = letterData["bezierOne3Y"];
+  let one4X = letterData["bezierOne4X"];
+  let one4Y = letterData["bezierOne4Y"];
+  let two2X = letterData["bezierTwo2X"];
+  let two2Y = letterData["bezierTwo2Y"];
+  let two3X = letterData["bezierTwo3X"];
+  let two3Y = letterData["bezierTwo3Y"];
+  let two4X = letterData["bezierTwo4X"];
+  let two4Y = letterData["bezierTwo4Y"];
 
   
   push();
@@ -81,14 +93,25 @@ function drawLetter(letterData) {
   bezierVertex(-30, 0, -30, 40, 0, 40);
   endShape();
   stroke(255);
-  strokeWeight(1);
+  strokeWeight(3);
   noFill();
-  beginShape();
-  vertex(0, 40);
-  bezierVertex(c, 40, 40, c, 40, 0);
-  bezierVertex(40, -c, c, -40, 0, -40);
+  // line(-8, 38, 50, 100)
+  // beginShape();
+  vertex(-5, 40);
+  bezierVertex(one2X, one2Y, one3X, one3Y, one4X, one4Y);
+  bezierVertex(two2X, two2Y, two3X, two3Y, two4X, two4Y);
+  // bezierVertex(c, 40, 40, c, 40, 0);
+  // bezierVertex(40, -c, c, -40, 0, -40);
   endShape();
+  strokeWeight(5);
+  stroke(255, 0, 255);
+  point(one2X, one2Y);
+  point(one3X, one3Y);
+  stroke(0, 255, 255);
+  point(two2X, two2Y);
+  point(two3X, two3Y);
   pop();
+  
   // scale(-1, -1);
   // fill(0);
   // beginShape();
