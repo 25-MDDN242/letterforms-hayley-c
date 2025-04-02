@@ -181,15 +181,6 @@ const alphabet = {
     "twoVar7": 70,
     "twoVar8": 10
 
-    // "twoVar1": 100,
-    // "twoVar2": 20,
-    // "twoVar3": 100,
-    // "twoVar4": 50,
-    // "twoVar5": 15,
-    // "twoVar6": 50,
-    // "twoVar7": -20,
-    // "twoVar8": -10
-
     // "teardropScaleX": 1,
     // "teardropScaleY": 1,
     // "teardropX": 50,
@@ -223,6 +214,24 @@ const alphabet = {
     // "teardropX": 50,
     // "teardropY": 150,
     // "teardropRotate": 200
+
+    "oneVar1": 80,
+    "oneVar2": -25,
+    "oneVar3": -30,
+    "oneVar4": -115,
+    "oneVar5": -20,
+    "oneVar6": 115,
+    "oneVar7": 80,
+    "oneVar8": 25,
+
+    "twoVar1": 65,
+    "twoVar2": -50,
+    "twoVar3": 130,
+    "twoVar4": -70,
+    "twoVar5": 60,
+    "twoVar6": 40,
+    "twoVar7": 80,
+    "twoVar8": 125
   },
   "H": {
     // "teardropScaleX": 1,

@@ -1,5 +1,5 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#000000";
+var systemBackgroundColor = "#D8EBF0";
 var systemLineColor = "#D3D3D3";
 var systemBoxColor = "#C73869";
 
@@ -19,10 +19,6 @@ const spacing = 10;
  * from (0,0) to (100, 200)
  */
 function drawLetter(letterData) {
-  stroke(255);
-  strokeWeight(2);
-  noFill();
-
   let bezierOneX1 = 0 + letterData["oneVar1"];
   let bezierOneY1 = 150 + letterData["oneVar2"];
   let bezierOneX2 = 0 + letterData["oneVar3"];
@@ -41,12 +37,15 @@ function drawLetter(letterData) {
   let bezierTwoX4 = 0 + letterData["twoVar7"];
   let bezierTwoY4 = 150 + letterData["twoVar8"]
 
+  stroke(247, 187, 119);
+  strokeWeight(3);
+  noFill();
   bezier(bezierOneX1, bezierOneY1, bezierOneX2, bezierOneY2, bezierOneX3, bezierOneY3, bezierOneX4, bezierOneY4);
   bezier(bezierOneX1, bezierOneY1, bezierOneX2 + spacing, bezierOneY2 + spacing, bezierOneX3 + spacing, bezierOneY3 - spacing, bezierOneX4, bezierOneY4);
   bezier(bezierOneX1, bezierOneY1, bezierOneX2 + 2 * spacing, bezierOneY2 + 2 * spacing, bezierOneX3 + 2 * spacing, bezierOneY3 - 2 * spacing, bezierOneX4, bezierOneY4);
 
   noStroke();
-  fill(255);
+  fill(247, 187, 119);
   beginShape();
   vertex(bezierTwoX1, bezierTwoY1);
   bezierVertex(bezierTwoX2, bezierTwoY2 + 2 * spacing, bezierTwoX3 + 2 * spacing, bezierTwoY3, bezierTwoX4 + 2 * spacing, bezierTwoY4);
@@ -84,7 +83,7 @@ function drawLetter(letterData) {
   // scale(teardropSizeX, teardropSizeY);
   // rotate(teardropSpin);
   // noStroke();
-  // fill(255);
+  // fill(247, 187, 119);
   // let c = 40*0.551915024494;
   // beginShape();
   // vertex(0, 40);
@@ -93,7 +92,7 @@ function drawLetter(letterData) {
   // bezierVertex(30, -40, 30, 0, 0, 0);
   // bezierVertex(-30, 0, -30, 40, 0, 40);
   // endShape();
-  // stroke(255);
+  // stroke(247, 187, 119);
   // strokeWeight(5);
   // noFill();
   // // line(-8, 38, 50, 100)
