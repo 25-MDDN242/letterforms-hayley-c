@@ -44,74 +44,38 @@ function drawLetter(letterData) {
   bezier(bezierOneX1, bezierOneY1, bezierOneX2 + spacing, bezierOneY2 + spacing, bezierOneX3 + spacing, bezierOneY3 - spacing, bezierOneX4, bezierOneY4);
   bezier(bezierOneX1, bezierOneY1, bezierOneX2 + 2 * spacing, bezierOneY2 + 2 * spacing, bezierOneX3 + 2 * spacing, bezierOneY3 - 2 * spacing, bezierOneX4, bezierOneY4);
 
+  // noStroke();
+  // fill(247, 187, 119);
+  // beginShape();
+  // vertex(bezierTwoX1, bezierTwoY1);
+  // bezierVertex(bezierTwoX2, bezierTwoY2 + 2 * spacing, bezierTwoX3 + 2 * spacing, bezierTwoY3, bezierTwoX4 + 2 * spacing, bezierTwoY4);
+  // bezierVertex(bezierTwoX3 - 2 * spacing, bezierTwoY3, bezierTwoX2 - 2 * spacing, bezierTwoY2  + 2 * spacing, bezierTwoX1, bezierTwoY1);
+  // endShape();
+  // noFill();
+  // stroke(0, 255, 255);
+  // stroke(5);
+  // bezier(bezierTwoX1, bezierTwoY1, bezierTwoX2, bezierTwoY2, bezierTwoX3, bezierTwoY3, bezierTwoX4, bezierTwoY4);
+
   noStroke();
   fill(247, 187, 119);
   beginShape();
   vertex(bezierTwoX1, bezierTwoY1);
-  bezierVertex(bezierTwoX2, bezierTwoY2 + 2 * spacing, bezierTwoX3 + 2 * spacing, bezierTwoY3, bezierTwoX4 + 2 * spacing, bezierTwoY4);
-  bezierVertex(bezierTwoX3 - 2 * spacing, bezierTwoY3, bezierTwoX2 - 2 * spacing, bezierTwoY2  + 2 * spacing, bezierTwoX1, bezierTwoY1);
+  bezierVertex(bezierTwoX2 + 1.5 * spacing, bezierTwoY2, bezierTwoX3 + 1.5 * spacing, bezierTwoY3, bezierTwoX4, bezierTwoY4);
+  bezierVertex(bezierTwoX3 - 1.5 * spacing, bezierTwoY3, bezierTwoX2 - 1.5 * spacing, bezierTwoY2, bezierTwoX1, bezierTwoY1);
   endShape();
+
+  // noFill();
+  // stroke(0);
+  // strokeWeight(2);
+  // bezier(bezierTwoX1, bezierTwoY1, bezierTwoX2, bezierTwoY2, bezierTwoX3, bezierTwoY3, bezierTwoX4, bezierTwoY4);
 
   strokeWeight(5);
   stroke(255, 0, 255);
-  point(bezierTwoX2, bezierTwoY2);
+  point(bezierOneX2, bezierOneY2);
+  point(bezierOneX3, bezierOneY3);
   stroke(0, 255, 255);
+  point(bezierTwoX2, bezierTwoY2);
   point(bezierTwoX3, bezierTwoY3);
-
-  // angleMode(DEGREES);
-  // let teardropSizeX = letterData["teardropScaleX"];
-  // let teardropSizeY = letterData["teardropScaleY"];
-  // let teardropTranslateX = letterData["teardropX"];
-  // let teardropTranslateY = letterData["teardropY"];
-  // let teardropSpin = letterData["teardropRotate"];
-  // let one2X = letterData["bezierOne2X"];
-  // let one2Y = letterData["bezierOne2Y"];
-  // let one3X = letterData["bezierOne3X"];
-  // let one3Y = letterData["bezierOne3Y"];
-  // let one4X = letterData["bezierOne4X"];
-  // let one4Y = letterData["bezierOne4Y"];
-  // let two2X = letterData["bezierTwo2X"];
-  // let two2Y = letterData["bezierTwo2Y"];
-  // let two3X = letterData["bezierTwo3X"];
-  // let two3Y = letterData["bezierTwo3Y"];
-  // let two4X = letterData["bezierTwo4X"];
-  // let two4Y = letterData["bezierTwo4Y"];
-
-  
-  // push();
-  // translate(teardropTranslateX, teardropTranslateY);
-  // scale(teardropSizeX, teardropSizeY);
-  // rotate(teardropSpin);
-  // noStroke();
-  // fill(247, 187, 119);
-  // let c = 40*0.551915024494;
-  // beginShape();
-  // vertex(0, 40);
-  // bezierVertex(-c, 40, -40, c, -40, 0);
-  // bezierVertex(-40, -c, -c, -40, 0, -40);
-  // bezierVertex(30, -40, 30, 0, 0, 0);
-  // bezierVertex(-30, 0, -30, 40, 0, 40);
-  // endShape();
-  // stroke(247, 187, 119);
-  // strokeWeight(5);
-  // noFill();
-  // // line(-8, 38, 50, 100)
-  // // beginShape();
-  // vertex(0, 40);
-  // bezierVertex(one2X, one2Y, one3X, one3Y, one4X, one4Y);
-  // bezierVertex(two2X, two2Y, two3X, two3Y, two4X, two4Y);
-  // // bezierVertex(c, 40, 40, c, 40, 0);
-  // // bezierVertex(40, -c, c, -40, 0, -40);
-  // endShape();
-  // strokeWeight(5);
-  // stroke(255, 0, 255);
-  // point(one2X, one2Y);
-  // point(one3X, one3Y);
-  // stroke(0, 255, 255);
-  // point(two2X, two2Y);
-  // point(two3X, two3Y);
-  // pop();
-
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
