@@ -115,13 +115,13 @@ const alphabet = {
     "twoVar8": 20
   },
   "F": {
-    "oneVar1": 95,
+    "oneVar1": 85,
     "oneVar2": -60,
-    "oneVar3": 65,
+    "oneVar3": 55,
     "oneVar4": -125,
-    "oneVar5": 25,
+    "oneVar5": 20,
     "oneVar6": -10,
-    "oneVar7": 5,
+    "oneVar7": 0,
     "oneVar8": -80,
 
     "twoVar1": 5,
@@ -210,15 +210,6 @@ const alphabet = {
     "twoVar8": -50
   },
   "K": {
-    // "oneVar1": 95,
-    // "oneVar2": 47,
-    // "oneVar3": 30,
-    // "oneVar4": 40,
-    // "oneVar5": 60,
-    // "oneVar6": 10,
-    // "oneVar7": 25,
-    // "oneVar8": -20,
-
     "oneVar1": 95,
     "oneVar2": 47,
     "oneVar3": 0,
@@ -266,26 +257,17 @@ const alphabet = {
     "oneVar7": 100,
     "oneVar8": 50,
 
-    "twoVar1": 0,
-    "twoVar2": 45,
-    "twoVar3": 35,
-    "twoVar4": 50,
-    "twoVar5": -5,
-    "twoVar6": -110,
-    "twoVar7": 65,
-    "twoVar8": -29
-
-    // "twoVar1": 27,
-    // "twoVar2": 50,
-    // "twoVar3": -8,
-    // "twoVar4": 25,
-    // "twoVar5": 42,
-    // "twoVar6": -25,
-    // "twoVar7": 7,
-    // "twoVar8": -50
+    "twoVar1": 50,
+    "twoVar2": -20,
+    "twoVar5": 35,
+    "twoVar6": 80,
+    "twoVar3": 20,
+    "twoVar4": -125,
+    "twoVar7": 0,
+    "twoVar8": 50
   },
   "N": {
-    "oneVar1": 25,
+    "oneVar1": 20,
     "oneVar2": 45,
     "oneVar3": -10,
     "oneVar4": -20,
@@ -323,7 +305,7 @@ const alphabet = {
     "twoVar8": 40
   },
   "P": {
-    "oneVar1": 30,
+    "oneVar1": 25,
     "oneVar2": -30,
     "oneVar3": 105,
     "oneVar4": -115,
@@ -363,10 +345,10 @@ const alphabet = {
   "R": {
     "oneVar1": 30,
     "oneVar2": -15,
-    "oneVar3": -10,
+    "oneVar3": 0,
     "oneVar4": -35,
     "oneVar5": 75,
-    "oneVar6": -80,
+    "oneVar6": -70,
     "oneVar7": 90,
     "oneVar8": -20,
 
@@ -551,23 +533,51 @@ const alphabet = {
     "twoVar8": 40
   },
   "1": {
-    "oneVar1": 70,
-    "oneVar2": 50,
-    "oneVar3": -5,
-    "oneVar4": 5,
-    "oneVar5": 105,
-    "oneVar6": -165,
+    
+    "oneVar1": 95,
+    "oneVar2": 47,
+    "oneVar3": 30,
+    "oneVar4": 40,
+    "oneVar5": 60,
+    "oneVar6": 10,
     "oneVar7": 25,
-    "oneVar8": -90,
+    "oneVar8": -20,
 
-    "twoVar1": 5,
+    // "oneVar1": 65,
+    // "oneVar2": -112,
+    // "oneVar5": 40,
+    // "oneVar4": -125,
+    // "oneVar3": 25,
+    // "oneVar6": -60,
+    // "oneVar7": 10,
+    // "oneVar8": -90,
+
+    "twoVar1": 45,
     "twoVar2": 50,
-    "twoVar3": 35,
-    "twoVar4": -20,
-    "twoVar5": 55,
-    "twoVar6": 70,
-    "twoVar7": 95,
-    "twoVar8": 40
+    "twoVar3": 90,
+    "twoVar4": 25,
+    "twoVar5": 20,
+    "twoVar6": -85,
+    "twoVar7": 70,
+    "twoVar8": -115
+
+    // "twoVar1": 25,
+    // "twoVar2": -85,
+    // "twoVar5": 35,
+    // "twoVar6": -10,
+    // "twoVar3": 55,
+    // "twoVar4": -70,
+    // "twoVar7": 50,
+    // "twoVar8": -100
+
+    // "twoVar1": 5,
+    // "twoVar2": 40,
+    // "twoVar5": 35,
+    // "twoVar6": 10,
+    // "twoVar3": 55,
+    // "twoVar4": 70,
+    // "twoVar7": 95,
+    // "twoVar8": 50
   },
   "2": {
     "oneVar1": 10,
@@ -576,13 +586,13 @@ const alphabet = {
     "oneVar4": -150,
     "oneVar5": 190,
     "oneVar6": -130,
-    "oneVar7": 10,
+    "oneVar7": 15,
     "oneVar8": 35,
 
     "twoVar1": 5,
     "twoVar2": 50,
     "twoVar3": 35,
-    "twoVar4": -20,
+    "twoVar4": 0,
     "twoVar5": 55,
     "twoVar6": 70,
     "twoVar7": 95,
@@ -606,15 +616,6 @@ const alphabet = {
     "twoVar6": -30,
     "twoVar7": 20,
     "twoVar8": -30,
-
-    // "twoVar1": 10,
-    // "twoVar2": 5,
-    // "twoVar3": 15,
-    // "twoVar4": 115,
-    // "twoVar5": 150,
-    // "twoVar6": -5,
-    // "twoVar7": 40,
-    // "twoVar8": -30,
   },
   "4": {
     "oneVar1": 95,
@@ -674,23 +675,23 @@ const alphabet = {
     "twoVar8": -118
   },
   "7": {
-    "oneVar1": 10,
-    "oneVar2": 47,
-    "oneVar3": 100,
-    "oneVar4": -75,
-    "oneVar5": 100,
-    "oneVar6": -125,
-    "oneVar7": 5,
-    "oneVar8": -105,
+    "oneVar1": 15,
+    "oneVar2": -40,
+    "oneVar3": 45,
+    "oneVar4": -105,
+    "oneVar5": 70,
+    "oneVar6": 5,
+    "oneVar7": 100,
+    "oneVar8": -55,
 
-    "twoVar1": 95,
-    "twoVar2": -40,
-    "twoVar3": 70,
-    "twoVar4": 5,
-    "twoVar5": 40,
-    "twoVar6": -80,
-    "twoVar7": 10,
-    "twoVar8": -25
+    "twoVar1": 20,
+    "twoVar2": 50,
+    "twoVar3": -10,
+    "twoVar4": 0,
+    "twoVar5": 180,
+    "twoVar6": -160,
+    "twoVar7": 5,
+    "twoVar8": -105
   },
   "8": {
     "oneVar1": 60,
