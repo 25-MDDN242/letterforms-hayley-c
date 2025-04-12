@@ -66,25 +66,57 @@ function drawLetter(letterData) {
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
+  let zero = 0;
+  let flipX = -1;
   let new_letter = {};
 
-  new_letter["oneVar1"]    = map(percent, 0, 100, oldObj["oneVar1"], newObj["oneVar1"]);
+  // if(percent < 60){
+  //   new_letter["twoVar3"] = oldObj["twoVar3"];
+  //   new_letter["twoVar5"] = oldObj["twoVar5"];
+  // }
+  // else{
+  //   new_letter["twoVar3"] = map(percent, 60, 100, oldObj["twoVar3"], newObj["twoVar3"]);
+  //   new_letter["twoVar5"] = map(percent, 60, 100, oldObj["twoVar5"], newObj["twoVar5"]);
+  // }
+
+  if(percent < 50){
+    new_letter["twoVar1"] = map(percent, 0, 50, oldObj["twoVar1"], zero);
+    new_letter["twoVar2"] = map(percent, 0, 50, oldObj["twoVar2"], zero);
+    new_letter["twoVar3"] = map(percent, 0, 50, oldObj["twoVar3"], zero);
+    new_letter["twoVar4"] = map(percent, 0, 50, oldObj["twoVar4"], zero);
+    new_letter["twoVar5"] = map(percent, 0, 50, oldObj["twoVar5"], zero);
+    new_letter["twoVar6"] = map(percent, 0, 50, oldObj["twoVar6"], zero);
+    new_letter["twoVar7"] = map(percent, 0, 50, oldObj["twoVar7"], zero);
+    new_letter["twoVar8"] = map(percent, 0, 50, oldObj["twoVar8"], zero);
+  }
+  else{
+    new_letter["twoVar1"] = map(percent, 50, 100, zero, newObj["twoVar1"]);
+    new_letter["twoVar2"] = map(percent, 50, 100, zero, newObj["twoVar2"]);
+    new_letter["twoVar3"] = map(percent, 50, 100, zero, newObj["twoVar3"]);
+    new_letter["twoVar4"] = map(percent, 50, 100, zero, newObj["twoVar4"]);
+    new_letter["twoVar5"] = map(percent, 50, 100, zero, newObj["twoVar5"]);
+    new_letter["twoVar6"] = map(percent, 50, 100, zero, newObj["twoVar6"]);
+    new_letter["twoVar7"] = map(percent, 50, 100, zero, newObj["twoVar7"]);
+    new_letter["twoVar8"] = map(percent, 50, 100, zero, newObj["twoVar8"]);
+  }
+
+  new_letter["oneVar1"] = map(percent, 0, 100, oldObj["oneVar1"], newObj["oneVar1"]);
   new_letter["oneVar2"] = map(percent, 0, 100, oldObj["oneVar2"], newObj["oneVar2"]);
   new_letter["oneVar3"] = map(percent, 0, 100, oldObj["oneVar3"], newObj["oneVar3"]);
-  new_letter["oneVar4"]    = map(percent, 0, 100, oldObj["oneVar4"], newObj["oneVar4"]);
+  new_letter["oneVar4"] = map(percent, 0, 100, oldObj["oneVar4"], newObj["oneVar4"]);
   new_letter["oneVar5"] = map(percent, 0, 100, oldObj["oneVar5"], newObj["oneVar5"]);
   new_letter["oneVar6"] = map(percent, 0, 100, oldObj["oneVar6"], newObj["oneVar6"]);
   new_letter["oneVar7"] = map(percent, 0, 100, oldObj["oneVar7"], newObj["oneVar7"]);
   new_letter["oneVar8"] = map(percent, 0, 100, oldObj["oneVar8"], newObj["oneVar8"]);
 
-  new_letter["twoVar1"]    = map(percent, 0, 100, oldObj["twoVar1"], newObj["twoVar1"]);
-  new_letter["twoVar2"] = map(percent, 0, 100, oldObj["twoVar2"], newObj["twoVar2"]);
-  new_letter["twoVar3"] = map(percent, 0, 100, oldObj["twoVar3"], newObj["twoVar3"]);
-  new_letter["twoVar4"]    = map(percent, 0, 100, oldObj["twoVar4"], newObj["twoVar4"]);
-  new_letter["twoVar5"] = map(percent, 0, 100, oldObj["twoVar5"], newObj["twoVar5"]);
-  new_letter["twoVar6"] = map(percent, 0, 100, oldObj["twoVar6"], newObj["twoVar6"]);
-  new_letter["twoVar7"] = map(percent, 0, 100, oldObj["twoVar7"], newObj["twoVar7"]);
-  new_letter["twoVar8"] = map(percent, 0, 100, oldObj["twoVar8"], newObj["twoVar8"]);
+  //new_letter["twoVar1"]    = map(percent, 0, 100, oldObj["twoVar1"], newObj["twoVar1"]);
+  //new_letter["twoVar2"] = map(percent, 0, 100, oldObj["twoVar2"], newObj["twoVar2"]);
+  //new_letter["twoVar3"] = map(percent, 0, 100, oldObj["twoVar3"], newObj["twoVar3"]);
+  //new_letter["twoVar4"]    = map(percent, 0, 100, oldObj["twoVar4"], newObj["twoVar4"]);
+  //new_letter["twoVar5"] = map(percent, 0, 100, oldObj["twoVar5"], newObj["twoVar5"]);
+  //new_letter["twoVar6"] = map(percent, 0, 100, oldObj["twoVar6"], newObj["twoVar6"]);
+  //new_letter["twoVar7"] = map(percent, 0, 100, oldObj["twoVar7"], newObj["twoVar7"]);
+  //new_letter["twoVar8"] = map(percent, 0, 100, oldObj["twoVar8"], newObj["twoVar8"]);
  
   return new_letter;
 }
