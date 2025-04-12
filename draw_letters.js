@@ -19,6 +19,8 @@ const spacing = 10;
  * from (0,0) to (100, 200)
  */
 function drawLetter(letterData) {
+  let scaleX = letterData["scale"];
+
   // lined bezier parameters
   let bezierOneX1 = 0 + letterData["oneVar1"]; // first anchor x 
   let bezierOneY1 = 150 + letterData["oneVar2"]; // first anchor y
@@ -38,37 +40,67 @@ function drawLetter(letterData) {
   let bezierTwoX4 = 0 + letterData["twoVar7"]; // second anchor point x
   let bezierTwoY4 = 150 + letterData["twoVar8"]; // second anchor point y
 
-  // lined bezier curve
-  stroke(217, 217, 217);
-  strokeWeight(3);
-  noFill();
-  bezier(bezierOneX1, bezierOneY1, bezierOneX2, bezierOneY2, bezierOneX3, bezierOneY3, bezierOneX4, bezierOneY4);
-  bezier(bezierOneX1, bezierOneY1, bezierOneX2 + spacing, bezierOneY2 + spacing, bezierOneX3 + spacing, bezierOneY3 - spacing, bezierOneX4, bezierOneY4);
-  bezier(bezierOneX1, bezierOneY1, bezierOneX2 + 2 * spacing, bezierOneY2 + 2 * spacing, bezierOneX3 + 2 * spacing, bezierOneY3 - 2 * spacing, bezierOneX4, bezierOneY4);
+  
+  push();
 
-  // solid bezier curve
-  noStroke();
-  fill(217, 217, 217);
-  beginShape();
-  vertex(bezierTwoX1, bezierTwoY1);
-  bezierVertex(bezierTwoX2 + 1.5 * spacing, bezierTwoY2, bezierTwoX3 + 1.5 * spacing, bezierTwoY3, bezierTwoX4, bezierTwoY4);
-  bezierVertex(bezierTwoX3 - 1.5 * spacing, bezierTwoY3, bezierTwoX2 - 1.5 * spacing, bezierTwoY2, bezierTwoX1, bezierTwoY1);
-  endShape();
+  scale(scaleX, 1);
 
-  // TO DO
-  strokeWeight(5);
-  stroke(255, 0, 255);
-  point(bezierOneX2, bezierOneY2);
-  point(bezierOneX3, bezierOneY3);
-  stroke(0, 255, 255);
-  point(bezierTwoX2, bezierTwoY2);
-  point(bezierTwoX3, bezierTwoY3);
+    // lined bezier curve
+    stroke(217, 217, 217);
+    strokeWeight(3);
+    noFill();
+    bezier(bezierOneX1, bezierOneY1, bezierOneX2, bezierOneY2, bezierOneX3, bezierOneY3, bezierOneX4, bezierOneY4);
+    bezier(bezierOneX1, bezierOneY1, bezierOneX2 + spacing, bezierOneY2 + spacing, bezierOneX3 + spacing, bezierOneY3 - spacing, bezierOneX4, bezierOneY4);
+    bezier(bezierOneX1, bezierOneY1, bezierOneX2 + 2 * spacing, bezierOneY2 + 2 * spacing, bezierOneX3 + 2 * spacing, bezierOneY3 - 2 * spacing, bezierOneX4, bezierOneY4);
+  
+    // solid bezier curve
+    noStroke();
+    fill(217, 217, 217);
+    beginShape();
+    vertex(bezierTwoX1, bezierTwoY1);
+    bezierVertex(bezierTwoX2 + 1.5 * spacing, bezierTwoY2, bezierTwoX3 + 1.5 * spacing, bezierTwoY3, bezierTwoX4, bezierTwoY4);
+    bezierVertex(bezierTwoX3 - 1.5 * spacing, bezierTwoY3, bezierTwoX2 - 1.5 * spacing, bezierTwoY2, bezierTwoX1, bezierTwoY1);
+    endShape();
+  
+    // strokeWeight(5);
+    // stroke(255, 0, 255);
+    // point(bezierOneX2, bezierOneY2);
+    // point(bezierOneX3, bezierOneY3);
+    // stroke(0, 255, 255);
+    // point(bezierTwoX2, bezierTwoY2);
+    // point(bezierTwoX3, bezierTwoY3);
+
+  pop();
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
-  let zero = 0;
-  let flipX = -1;
   let new_letter = {};
+
+  let maxX = 100;
+  let minX = 0;
+
+  if (percent < 33){
+    new_letter["twoVar1"] = map(percent, 0, 33, oldObj["twoVar1"], maxX);
+    new_letter["twoVar7"] = map(percent, 0, 33, oldObj["twoVar7"], minX);
+  }
+  else if (percent > 33 && percent < 66) {
+    new_letter["twoVar1"] = map(percent, 33, 66, maxX, minX);
+    new_letter["twoVar7"] = map(percent, 33, 66, minX, maxX);
+  }
+  else {
+    new_letter["twoVar1"] = map(percent, 66, 100, minX, newObj["twoVar1"]);
+  }
+
+  // if (percent < 50){
+  // let narrow = map(percent, 0, 50, 1, 0);
+  // new_letter["scale"] = narrow;
+  // percent = 0;
+  // }
+  // else {
+  //   let narrow = map(percent, 50, 100, 0, 1);
+  //   new_letter["scale"] = narrow;
+  //   percent = 100;
+  // }
 
   // if(percent < 60){
   //   new_letter["twoVar3"] = oldObj["twoVar3"];
@@ -79,26 +111,33 @@ function interpolate_letter(percent, oldObj, newObj) {
   //   new_letter["twoVar5"] = map(percent, 60, 100, oldObj["twoVar5"], newObj["twoVar5"]);
   // }
 
-  if(percent < 50){
-    new_letter["twoVar1"] = map(percent, 0, 50, oldObj["twoVar1"], zero);
-    new_letter["twoVar2"] = map(percent, 0, 50, oldObj["twoVar2"], zero);
-    new_letter["twoVar3"] = map(percent, 0, 50, oldObj["twoVar3"], zero);
-    new_letter["twoVar4"] = map(percent, 0, 50, oldObj["twoVar4"], zero);
-    new_letter["twoVar5"] = map(percent, 0, 50, oldObj["twoVar5"], zero);
-    new_letter["twoVar6"] = map(percent, 0, 50, oldObj["twoVar6"], zero);
-    new_letter["twoVar7"] = map(percent, 0, 50, oldObj["twoVar7"], zero);
-    new_letter["twoVar8"] = map(percent, 0, 50, oldObj["twoVar8"], zero);
-  }
-  else{
-    new_letter["twoVar1"] = map(percent, 50, 100, zero, newObj["twoVar1"]);
-    new_letter["twoVar2"] = map(percent, 50, 100, zero, newObj["twoVar2"]);
-    new_letter["twoVar3"] = map(percent, 50, 100, zero, newObj["twoVar3"]);
-    new_letter["twoVar4"] = map(percent, 50, 100, zero, newObj["twoVar4"]);
-    new_letter["twoVar5"] = map(percent, 50, 100, zero, newObj["twoVar5"]);
-    new_letter["twoVar6"] = map(percent, 50, 100, zero, newObj["twoVar6"]);
-    new_letter["twoVar7"] = map(percent, 50, 100, zero, newObj["twoVar7"]);
-    new_letter["twoVar8"] = map(percent, 50, 100, zero, newObj["twoVar8"]);
-  }
+  // let zero = 0;
+  // if(percent < 50){
+  //   new_letter["scale"] = map(percent, 0, 50, oldObj["scale"], zero);
+
+  //   new_letter["twoVar1"] = map(percent, 0, 50, oldObj["twoVar1"], zero);
+  //   new_letter["twoVar2"] = map(percent, 0, 50, oldObj["twoVar2"], zero);
+  //   new_letter["twoVar3"] = map(percent, 0, 50, oldObj["twoVar3"], zero);
+  //   new_letter["twoVar4"] = map(percent, 0, 50, oldObj["twoVar4"], zero);
+  //   new_letter["twoVar5"] = map(percent, 0, 50, oldObj["twoVar5"], zero);
+  //   new_letter["twoVar6"] = map(percent, 0, 50, oldObj["twoVar6"], zero);
+  //   new_letter["twoVar7"] = map(percent, 0, 50, oldObj["twoVar7"], zero);
+  //   new_letter["twoVar8"] = map(percent, 0, 50, oldObj["twoVar8"], zero);
+  // }
+  // else{
+  //   new_letter["scale"] = map(percent, 50, 100, zero, newObj["scale"]);
+
+  //   new_letter["twoVar1"] = map(percent, 50, 100, zero, newObj["twoVar1"]);
+  //   new_letter["twoVar2"] = map(percent, 50, 100, zero, newObj["twoVar2"]);
+  //   new_letter["twoVar3"] = map(percent, 50, 100, zero, newObj["twoVar3"]);
+  //   new_letter["twoVar4"] = map(percent, 50, 100, zero, newObj["twoVar4"]);
+  //   new_letter["twoVar5"] = map(percent, 50, 100, zero, newObj["twoVar5"]);
+  //   new_letter["twoVar6"] = map(percent, 50, 100, zero, newObj["twoVar6"]);
+  //   new_letter["twoVar7"] = map(percent, 50, 100, zero, newObj["twoVar7"]);
+  //   new_letter["twoVar8"] = map(percent, 50, 100, zero, newObj["twoVar8"]);
+  // }
+
+  new_letter["scale"] = map(percent, 0, 100, oldObj["scale"], newObj["scale"]);
 
   new_letter["oneVar1"] = map(percent, 0, 100, oldObj["oneVar1"], newObj["oneVar1"]);
   new_letter["oneVar2"] = map(percent, 0, 100, oldObj["oneVar2"], newObj["oneVar2"]);
@@ -110,13 +149,13 @@ function interpolate_letter(percent, oldObj, newObj) {
   new_letter["oneVar8"] = map(percent, 0, 100, oldObj["oneVar8"], newObj["oneVar8"]);
 
   //new_letter["twoVar1"]    = map(percent, 0, 100, oldObj["twoVar1"], newObj["twoVar1"]);
-  //new_letter["twoVar2"] = map(percent, 0, 100, oldObj["twoVar2"], newObj["twoVar2"]);
-  //new_letter["twoVar3"] = map(percent, 0, 100, oldObj["twoVar3"], newObj["twoVar3"]);
-  //new_letter["twoVar4"]    = map(percent, 0, 100, oldObj["twoVar4"], newObj["twoVar4"]);
-  //new_letter["twoVar5"] = map(percent, 0, 100, oldObj["twoVar5"], newObj["twoVar5"]);
-  //new_letter["twoVar6"] = map(percent, 0, 100, oldObj["twoVar6"], newObj["twoVar6"]);
+  new_letter["twoVar2"] = map(percent, 0, 100, oldObj["twoVar2"], newObj["twoVar2"]);
+  new_letter["twoVar3"] = map(percent, 0, 100, oldObj["twoVar3"], newObj["twoVar3"]);
+  new_letter["twoVar4"]    = map(percent, 0, 100, oldObj["twoVar4"], newObj["twoVar4"]);
+  new_letter["twoVar5"] = map(percent, 0, 100, oldObj["twoVar5"], newObj["twoVar5"]);
+  new_letter["twoVar6"] = map(percent, 0, 100, oldObj["twoVar6"], newObj["twoVar6"]);
   //new_letter["twoVar7"] = map(percent, 0, 100, oldObj["twoVar7"], newObj["twoVar7"]);
-  //new_letter["twoVar8"] = map(percent, 0, 100, oldObj["twoVar8"], newObj["twoVar8"]);
+  new_letter["twoVar8"] = map(percent, 0, 100, oldObj["twoVar8"], newObj["twoVar8"]);
  
   return new_letter;
 }
