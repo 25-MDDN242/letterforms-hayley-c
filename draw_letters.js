@@ -40,10 +40,11 @@ function drawLetter(letterData) {
   let bezierTwoX4 = 0 + letterData["twoVar7"]; // second anchor point x
   let bezierTwoY4 = 150 + letterData["twoVar8"]; // second anchor point y
 
-  
   push();
-
+  angleMode(DEGREES);
+  shearX(letterData["shear"]);
   scale(scaleX, 1);
+  push();
 
     // lined bezier curve
     stroke(217, 217, 217);
@@ -52,7 +53,8 @@ function drawLetter(letterData) {
     bezier(bezierOneX1, bezierOneY1, bezierOneX2, bezierOneY2, bezierOneX3, bezierOneY3, bezierOneX4, bezierOneY4);
     bezier(bezierOneX1, bezierOneY1, bezierOneX2 + spacing, bezierOneY2 + spacing, bezierOneX3 + spacing, bezierOneY3 - spacing, bezierOneX4, bezierOneY4);
     bezier(bezierOneX1, bezierOneY1, bezierOneX2 + 2 * spacing, bezierOneY2 + 2 * spacing, bezierOneX3 + 2 * spacing, bezierOneY3 - 2 * spacing, bezierOneX4, bezierOneY4);
-  
+
+  pop();
     // solid bezier curve
     noStroke();
     fill(217, 217, 217);
@@ -61,83 +63,87 @@ function drawLetter(letterData) {
     bezierVertex(bezierTwoX2 + 1.5 * spacing, bezierTwoY2, bezierTwoX3 + 1.5 * spacing, bezierTwoY3, bezierTwoX4, bezierTwoY4);
     bezierVertex(bezierTwoX3 - 1.5 * spacing, bezierTwoY3, bezierTwoX2 - 1.5 * spacing, bezierTwoY2, bezierTwoX1, bezierTwoY1);
     endShape();
-  
-    // strokeWeight(5);
-    // stroke(255, 0, 255);
-    // point(bezierOneX2, bezierOneY2);
-    // point(bezierOneX3, bezierOneY3);
-    // stroke(0, 255, 255);
-    // point(bezierTwoX2, bezierTwoY2);
-    // point(bezierTwoX3, bezierTwoY3);
-
-  pop();
+    pop();
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
 
-  let maxX = 100;
-  let minX = 0;
-
-  if (percent < 33){
-    new_letter["twoVar1"] = map(percent, 0, 33, oldObj["twoVar1"], maxX);
-    new_letter["twoVar7"] = map(percent, 0, 33, oldObj["twoVar7"], minX);
-  }
-  else if (percent > 33 && percent < 66) {
-    new_letter["twoVar1"] = map(percent, 33, 66, maxX, minX);
-    new_letter["twoVar7"] = map(percent, 33, 66, minX, maxX);
-  }
-  else {
-    new_letter["twoVar1"] = map(percent, 66, 100, minX, newObj["twoVar1"]);
-  }
-
+  // REFLECTION
+  // let reflected = -1;
   // if (percent < 50){
-  // let narrow = map(percent, 0, 50, 1, 0);
-  // new_letter["scale"] = narrow;
-  // percent = 0;
+  //   // new_letter["scale"] = map(percent, 0, 50, oldObj["scale"], reflected);
+  //   new_letter["shear"] = map(percent, 0, 50, oldObj["shear"], fullShear);
   // }
   // else {
-  //   let narrow = map(percent, 50, 100, 0, 1);
-  //   new_letter["scale"] = narrow;
-  //   percent = 100;
+  //   // new_letter["scale"] = map(percent, 50, 100, reflected, newObj["scale"]);
+  //   new_letter["shear"] = map(percent, 50, 100, fullShear, newObj["shear"]);
   // }
 
-  // if(percent < 60){
-  //   new_letter["twoVar3"] = oldObj["twoVar3"];
-  //   new_letter["twoVar5"] = oldObj["twoVar5"];
+
+  if (percent < 25){
+    new_letter["shear"] = map(percent, 0, 25, oldObj["shear"], -45);
+  }
+  else if (percent >= 25 && percent < 75){
+    new_letter["shear"] = map(percent, 25, 75, -45, 54);
+  }
+  else {
+    new_letter["shear"] = map(percent, 75, 100, 45, newObj["shear"]);
+  }
+
+  if (percent < 50){
+    new_letter["scale"] = map(percent, 0, 50, oldObj["scale"], 0);
+  }
+  else {
+    new_letter["scale"] = map(percent, 50, 100, 0, newObj["scale"])
+  }
+
+  // //MIN MAX
+  // let maxX = 100;
+  // let minX = 0;
+
+  // if (percent < 25){
+  //   new_letter["oneVar1"] = map(percent, 0, 25, oldObj["oneVar1"], maxX);
+  //   new_letter["oneVar7"] = map(percent, 0, 25, oldObj["oneVar7"], minX);
   // }
-  // else{
-  //   new_letter["twoVar3"] = map(percent, 60, 100, oldObj["twoVar3"], newObj["twoVar3"]);
-  //   new_letter["twoVar5"] = map(percent, 60, 100, oldObj["twoVar5"], newObj["twoVar5"]);
+  // else if (percent > 25 && percent < 50) {
+  //   new_letter["oneVar1"] = map(percent, 25, 50, maxX, minX);
+  //   new_letter["oneVar7"] = map(percent, 25, 50, minX, maxX);
+  // }
+  // else if (percent > 50 && percent < 75){
+  //   new_letter["oneVar1"] = map(percent, 50, 75, minX, maxX);
+  //   new_letter["oneVar7"] = map(percent, 50, 75, maxX, minX);
+  // }
+  // else {
+  //   new_letter["oneVar1"] = map(percent, 75, 100, maxX, newObj["oneVar1"]);
+  //   new_letter["oneVar7"] = map(percent, 75, 100, minX, newObj["oneVar7"]);
   // }
 
-  // let zero = 0;
-  // if(percent < 50){
-  //   new_letter["scale"] = map(percent, 0, 50, oldObj["scale"], zero);
+  //SHRINK
+  let zero = 0;
+  if(percent < 50){
+    new_letter["twoVar1"] = map(percent, 0, 50, oldObj["twoVar1"], zero);
+    new_letter["twoVar2"] = map(percent, 0, 50, oldObj["twoVar2"], zero);
+    new_letter["twoVar3"] = map(percent, 0, 50, oldObj["twoVar3"], zero);
+    new_letter["twoVar4"] = map(percent, 0, 50, oldObj["twoVar4"], zero);
+    new_letter["twoVar5"] = map(percent, 0, 50, oldObj["twoVar5"], zero);
+    new_letter["twoVar6"] = map(percent, 0, 50, oldObj["twoVar6"], zero);
+    new_letter["twoVar7"] = map(percent, 0, 50, oldObj["twoVar7"], zero);
+    new_letter["twoVar8"] = map(percent, 0, 50, oldObj["twoVar8"], zero);
+  }
+  else{
+    new_letter["twoVar1"] = map(percent, 50, 100, zero, newObj["twoVar1"]);
+    new_letter["twoVar2"] = map(percent, 50, 100, zero, newObj["twoVar2"]);
+    new_letter["twoVar3"] = map(percent, 50, 100, zero, newObj["twoVar3"]);
+    new_letter["twoVar4"] = map(percent, 50, 100, zero, newObj["twoVar4"]);
+    new_letter["twoVar5"] = map(percent, 50, 100, zero, newObj["twoVar5"]);
+    new_letter["twoVar6"] = map(percent, 50, 100, zero, newObj["twoVar6"]);
+    new_letter["twoVar7"] = map(percent, 50, 100, zero, newObj["twoVar7"]);
+    new_letter["twoVar8"] = map(percent, 50, 100, zero, newObj["twoVar8"]);
+  }
 
-  //   new_letter["twoVar1"] = map(percent, 0, 50, oldObj["twoVar1"], zero);
-  //   new_letter["twoVar2"] = map(percent, 0, 50, oldObj["twoVar2"], zero);
-  //   new_letter["twoVar3"] = map(percent, 0, 50, oldObj["twoVar3"], zero);
-  //   new_letter["twoVar4"] = map(percent, 0, 50, oldObj["twoVar4"], zero);
-  //   new_letter["twoVar5"] = map(percent, 0, 50, oldObj["twoVar5"], zero);
-  //   new_letter["twoVar6"] = map(percent, 0, 50, oldObj["twoVar6"], zero);
-  //   new_letter["twoVar7"] = map(percent, 0, 50, oldObj["twoVar7"], zero);
-  //   new_letter["twoVar8"] = map(percent, 0, 50, oldObj["twoVar8"], zero);
-  // }
-  // else{
-  //   new_letter["scale"] = map(percent, 50, 100, zero, newObj["scale"]);
-
-  //   new_letter["twoVar1"] = map(percent, 50, 100, zero, newObj["twoVar1"]);
-  //   new_letter["twoVar2"] = map(percent, 50, 100, zero, newObj["twoVar2"]);
-  //   new_letter["twoVar3"] = map(percent, 50, 100, zero, newObj["twoVar3"]);
-  //   new_letter["twoVar4"] = map(percent, 50, 100, zero, newObj["twoVar4"]);
-  //   new_letter["twoVar5"] = map(percent, 50, 100, zero, newObj["twoVar5"]);
-  //   new_letter["twoVar6"] = map(percent, 50, 100, zero, newObj["twoVar6"]);
-  //   new_letter["twoVar7"] = map(percent, 50, 100, zero, newObj["twoVar7"]);
-  //   new_letter["twoVar8"] = map(percent, 50, 100, zero, newObj["twoVar8"]);
-  // }
-
-  new_letter["scale"] = map(percent, 0, 100, oldObj["scale"], newObj["scale"]);
+  //new_letter["scale"] = map(percent, 0, 100, oldObj["scale"], newObj["scale"]);
+ // new_letter["shear"] = map(percent, 0, 100, oldObj["shear"], newObj["shear"]);
 
   new_letter["oneVar1"] = map(percent, 0, 100, oldObj["oneVar1"], newObj["oneVar1"]);
   new_letter["oneVar2"] = map(percent, 0, 100, oldObj["oneVar2"], newObj["oneVar2"]);
@@ -148,14 +154,14 @@ function interpolate_letter(percent, oldObj, newObj) {
   new_letter["oneVar7"] = map(percent, 0, 100, oldObj["oneVar7"], newObj["oneVar7"]);
   new_letter["oneVar8"] = map(percent, 0, 100, oldObj["oneVar8"], newObj["oneVar8"]);
 
-  //new_letter["twoVar1"]    = map(percent, 0, 100, oldObj["twoVar1"], newObj["twoVar1"]);
-  new_letter["twoVar2"] = map(percent, 0, 100, oldObj["twoVar2"], newObj["twoVar2"]);
-  new_letter["twoVar3"] = map(percent, 0, 100, oldObj["twoVar3"], newObj["twoVar3"]);
-  new_letter["twoVar4"]    = map(percent, 0, 100, oldObj["twoVar4"], newObj["twoVar4"]);
-  new_letter["twoVar5"] = map(percent, 0, 100, oldObj["twoVar5"], newObj["twoVar5"]);
-  new_letter["twoVar6"] = map(percent, 0, 100, oldObj["twoVar6"], newObj["twoVar6"]);
-  //new_letter["twoVar7"] = map(percent, 0, 100, oldObj["twoVar7"], newObj["twoVar7"]);
-  new_letter["twoVar8"] = map(percent, 0, 100, oldObj["twoVar8"], newObj["twoVar8"]);
+  // new_letter["twoVar1"] = map(percent, 0, 100, oldObj["twoVar1"], newObj["twoVar1"]);
+  // new_letter["twoVar2"] = map(percent, 0, 100, oldObj["twoVar2"], newObj["twoVar2"]);
+  // new_letter["twoVar3"] = map(percent, 0, 100, oldObj["twoVar3"], newObj["twoVar3"]);
+  // new_letter["twoVar4"] = map(percent, 0, 100, oldObj["twoVar4"], newObj["twoVar4"]);
+  // new_letter["twoVar5"] = map(percent, 0, 100, oldObj["twoVar5"], newObj["twoVar5"]);
+  // new_letter["twoVar6"] = map(percent, 0, 100, oldObj["twoVar6"], newObj["twoVar6"]);
+  // new_letter["twoVar7"] = map(percent, 0, 100, oldObj["twoVar7"], newObj["twoVar7"]);
+  // new_letter["twoVar8"] = map(percent, 0, 100, oldObj["twoVar8"], newObj["twoVar8"]);
  
   return new_letter;
 }
@@ -165,3 +171,4 @@ var swapWords = [
   "CAB?CAB?",
   "BAAAAAAA"
 ]
+
