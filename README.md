@@ -32,12 +32,30 @@ The 16 parameters per letter are:
 #### Process
 
 ##### Sketch
+<img src = "https://i.pinimg.com/736x/48/f2/dd/48f2ddc328439dcb1d841bd3b5206b21.jpg" alt = "Different typefaces for G" width = "500">
+
+My sketch was inspired by the second typeface in this image, that used many curved lines that joined at a single point to create the different parts of the letter. To apply this to the code I tried to keep the anchor point of the letter parts the same, but I simplified the style slightly to use three lines.
+
+This used a total of 13 parameters, as the two parts each needed 6 coordinates. For the sketch I had used a boolean expression for the "stem".
+
 ![Sketch of initial idea](/assets/sketch.jpg)
 
 ##### Different Font
 
+When adding letters to the alphabet following my sketch idea, the characters began to look like scribbles and were quite messy.
+<img src = "/assets/sketchy.png" alt = "Sketched font" width = "500">
+
+I tried out a different font idea, using yin yang shapes to form the main part of the letter and extending the curved shape to form the secondary part. Although I liked the use of the yin yang shape, once adding the stems, I wasn't sure about the overall form. 
+<img src = "/assets/yinyang.png" alt = "Yin yang font" width = "500">
+
+I switched back to the code I had used for my sketch, and altered it slighty to change the letter forms. Rather than having both part comprised of lines, I filled the downstroke to make it a solid shape, and separated the starts and ends of the bezier curve shapes, creating a brush calligraphy aesthetic. Although this uses more parameters, I think it greatly improves the appearance of the letters and allows for more flexibility for certain characters.
+<img src = "/assets/linedSolid.png" alt = "Solid and lined brush calligraphy font" width = "500">
+
+I was not sure whether to continue developing the yin yang font or the brushstroke font. To help myself decide between the two, I changed the colour palette to a unappealing colour palette.
 ![Brush font in a different a orange and blue colour palette](/assets/blueOrangeBrush.png)
-![Yin yang font in a different a orange and blue colour palette](/assets/blueOrangeYinYang.png)
+<!-- ![Yin yang font in a different a orange and blue colour palette](/assets/blueOrangeYinYang.png) -->
+<img src = "/assets/blueOrangeYinYang.png" alt = "Yin yang font in a orange and blue colour palette" width = "500">
+I chose to continue with the brush calligraphy font, as I thought that this font looks better regardless of the colour palette. This style also allows me to better refine each of the letters to create a readable and cohesive typeface.
 
 ##### Alphabet
 

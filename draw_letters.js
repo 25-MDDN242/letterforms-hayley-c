@@ -21,49 +21,62 @@ const spacing = 10;
 function drawLetter(letterData) {
   let scaleX = letterData["scale"];
 
-  // lined bezier parameters
-  let bezierOneX1 = 0 + letterData["oneVar1"]; // first anchor x 
-  let bezierOneY1 = 150 + letterData["oneVar2"]; // first anchor y
-  let bezierOneX2 = 0 + letterData["oneVar3"]; // first control point x
-  let bezierOneY2 = 150 + letterData["oneVar4"]; // first control point y
-  let bezierOneX3 = 0 + letterData["oneVar5"]; // second control point x
-  let bezierOneY3 = 150 + letterData["oneVar6"]; // second control point y
-  let bezierOneX4 = 0 + letterData["oneVar7"]; // second anchor point x
-  let bezierOneY4 = 150 + letterData["oneVar8"]; // second anchor point y
-  // solid bezier parameters
-  let bezierTwoX1 = 0 + letterData["twoVar1"]; // first anchor point x 
-  let bezierTwoY1 = 150 + letterData["twoVar2"]; // first anchor point y
-  let bezierTwoX2 = 0 + letterData["twoVar3"]; // first control point x
-  let bezierTwoY2 = 150 + letterData["twoVar4"]; // first control point y
-  let bezierTwoX3 = 0 + letterData["twoVar5"]; // second control point x
-  let bezierTwoY3 = 150 + letterData["twoVar6"]; // second control point y
-  let bezierTwoX4 = 0 + letterData["twoVar7"]; // second anchor point x
-  let bezierTwoY4 = 150 + letterData["twoVar8"]; // second anchor point y
-
   push();
   angleMode(DEGREES);
   shearX(letterData["shear"]);
   scale(scaleX, 1);
+
   push();
-
-    // lined bezier curve
-    stroke(217, 217, 217);
-    strokeWeight(3);
-    noFill();
-    bezier(bezierOneX1, bezierOneY1, bezierOneX2, bezierOneY2, bezierOneX3, bezierOneY3, bezierOneX4, bezierOneY4);
-    bezier(bezierOneX1, bezierOneY1, bezierOneX2 + spacing, bezierOneY2 + spacing, bezierOneX3 + spacing, bezierOneY3 - spacing, bezierOneX4, bezierOneY4);
-    bezier(bezierOneX1, bezierOneY1, bezierOneX2 + 2 * spacing, bezierOneY2 + 2 * spacing, bezierOneX3 + 2 * spacing, bezierOneY3 - 2 * spacing, bezierOneX4, bezierOneY4);
-
+  lined(letterData);
   pop();
-    // solid bezier curve
-    noStroke();
-    fill(217, 217, 217);
-    beginShape();
-    vertex(bezierTwoX1, bezierTwoY1);
-    bezierVertex(bezierTwoX2 + 1.5 * spacing, bezierTwoY2, bezierTwoX3 + 1.5 * spacing, bezierTwoY3, bezierTwoX4, bezierTwoY4);
-    bezierVertex(bezierTwoX3 - 1.5 * spacing, bezierTwoY3, bezierTwoX2 - 1.5 * spacing, bezierTwoY2, bezierTwoX1, bezierTwoY1);
-    endShape();
-    pop();
+
+  solid(letterData);
+  pop();
+}
+
+// lined bezier shape
+function lined(letterData){
+  // lined bezier parameters
+  let bezierOneX1 = letterData["oneVar1"]; // first anchor x 
+  let bezierOneY1 = letterData["oneVar2"]; // first anchor y
+  let bezierOneX2 = letterData["oneVar3"]; // first control point x
+  let bezierOneY2 = letterData["oneVar4"]; // first control point y
+  let bezierOneX3 = letterData["oneVar5"]; // second control point x
+  let bezierOneY3 = letterData["oneVar6"]; // second control point y
+  let bezierOneX4 = letterData["oneVar7"]; // second anchor point x
+  let bezierOneY4 = letterData["oneVar8"]; // second anchor point y
+  
+  stroke(217, 217, 217); // light grey
+  strokeWeight(3); // stroke weight
+  noFill(); // no fill
+  // outer curve
+  bezier(bezierOneX1, bezierOneY1, bezierOneX2, bezierOneY2, bezierOneX3, bezierOneY3, bezierOneX4, bezierOneY4);
+  // middle curve
+  bezier(bezierOneX1, bezierOneY1, bezierOneX2 + spacing, bezierOneY2 + spacing, bezierOneX3 + spacing, bezierOneY3 - spacing, bezierOneX4, bezierOneY4);
+  // inner curve
+  bezier(bezierOneX1, bezierOneY1, bezierOneX2 + 2 * spacing, bezierOneY2 + 2 * spacing, bezierOneX3 + 2 * spacing, bezierOneY3 - 2 * spacing, bezierOneX4, bezierOneY4);
+}
+
+// solid bezier curve
+function solid(letterData){
+  // solid bezier parameters
+  let bezierTwoX1 = letterData["twoVar1"]; // first anchor point x 
+  let bezierTwoY1 = letterData["twoVar2"]; // first anchor point y
+  let bezierTwoX2 = letterData["twoVar3"]; // first control point x
+  let bezierTwoY2 = letterData["twoVar4"]; // first control point y
+  let bezierTwoX3 = letterData["twoVar5"]; // second control point x
+  let bezierTwoY3 = letterData["twoVar6"]; // second control point y
+  let bezierTwoX4 = letterData["twoVar7"]; // second anchor point x
+  let bezierTwoY4 = letterData["twoVar8"]; // second anchor point y
+  
+  noStroke(); // no stroke
+  fill(217, 217, 217); // light grey
+  //curve shape
+  beginShape();
+  vertex(bezierTwoX1, bezierTwoY1);
+  bezierVertex(bezierTwoX2 + 1.5 * spacing, bezierTwoY2, bezierTwoX3 + 1.5 * spacing, bezierTwoY3, bezierTwoX4, bezierTwoY4);
+  bezierVertex(bezierTwoX3 - 1.5 * spacing, bezierTwoY3, bezierTwoX2 - 1.5 * spacing, bezierTwoY2, bezierTwoX1, bezierTwoY1);
+  endShape();
 }
 
 function interpolate_letter(percent, oldObj, newObj) {

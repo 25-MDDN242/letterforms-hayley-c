@@ -96,7 +96,6 @@ function draw () {
 }
 
 function drawLetter(posx, posy, letterData) {
-  // let spacing = letterData["gap"];
   let firstBezierAnchorX = posx + letterData["AnchorX"];
   let firstBezierAnchorY = posy + letterData["AnchorY"];
   let firstBezierControlX = posx + letterData["firstControlX"];
