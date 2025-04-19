@@ -1,6 +1,6 @@
 const alphabet = {
   "default": {
-    "shear": 0,
+    "opacity": 1,
   
     "oneVar1": 55,
     "oneVar2": 103,
@@ -21,7 +21,7 @@ const alphabet = {
     "twoVar8": 132
   },
   "A": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 80,
     "oneVar2": 125,
@@ -42,7 +42,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "B": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 30,
     "oneVar2": 120,
@@ -63,7 +63,7 @@ const alphabet = {
     "twoVar8": 0
   },
   "C": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 85,
     "oneVar2": 120,
@@ -84,7 +84,7 @@ const alphabet = {
     "twoVar8": 185
   },
   "D": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 70,
     "oneVar2": 120,
@@ -106,7 +106,7 @@ const alphabet = {
   },
 
   "E": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 11,
     "oneVar2": 135,
@@ -127,7 +127,7 @@ const alphabet = {
     "twoVar8": 170
   },
   "F": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 85,
     "oneVar2": 90,
@@ -148,7 +148,7 @@ const alphabet = {
     "twoVar8": 25
   },
   "G": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 80,
     "oneVar2": 125,
@@ -169,7 +169,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "H": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 30,
     "oneVar2": 195,
@@ -190,7 +190,7 @@ const alphabet = {
     "twoVar8": 0
   },
   "I": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 50,
     "oneVar2": 90,
@@ -211,7 +211,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "J": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 50,
     "oneVar2": 90,
@@ -232,7 +232,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "K": {
-    "shear": 0,
+    "opacity": 1,
    
     "oneVar1": 95,
     "oneVar2": 197,
@@ -253,7 +253,7 @@ const alphabet = {
     "twoVar8": 0
   },
   "L": {
-    "shear": 0,
+    "opacity": 1,
     
     "oneVar1": 65,
     "oneVar2": 200,
@@ -274,7 +274,7 @@ const alphabet = {
     "twoVar8": 50
   },
   "M": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 40,
     "oneVar2": 130,
@@ -295,7 +295,7 @@ const alphabet = {
     "twoVar8": 160
   },
   "N": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 20,
     "oneVar2": 190,
@@ -316,7 +316,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "O": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 65,
     "oneVar2": 100,
@@ -337,7 +337,7 @@ const alphabet = {
     "twoVar8": 190
   },
   "P": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 25,
     "oneVar2": 120,
@@ -358,7 +358,7 @@ const alphabet = {
     "twoVar8": 95
   },
   "Q": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 75,
     "oneVar2": 125,
@@ -379,7 +379,7 @@ const alphabet = {
     "twoVar8": 95
   },
   "R": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 30,
     "oneVar2": 135,
@@ -400,7 +400,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "S": {
-    "shear": 0,
+    "opacity": 1,
  
     "oneVar1": 85,
     "oneVar2": 125,
@@ -421,7 +421,7 @@ const alphabet = {
     "twoVar8": 175
   },
   "T": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 95,
     "oneVar2": 90,
@@ -442,7 +442,7 @@ const alphabet = {
     "twoVar8": 0
   },
   "U": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 85,
     "oneVar2": 110,
@@ -463,7 +463,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "V": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 55,
     "oneVar2": 195,
@@ -484,7 +484,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "W": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 55,
     "oneVar2": 135,
@@ -505,7 +505,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "X": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 95,
     "oneVar2": 197,
@@ -526,7 +526,7 @@ const alphabet = {
     "twoVar8": 200
   },
   "Y": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 85,
     "oneVar2": 110,
@@ -547,7 +547,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "Z": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 10,
     "oneVar2": 197,
@@ -568,7 +568,7 @@ const alphabet = {
     "twoVar8": 200
   },
   "0": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 65,
     "oneVar2": 40,
@@ -589,7 +589,7 @@ const alphabet = {
     "twoVar8": 190
   },
   "1": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 5,
     "oneVar2": 195,
@@ -610,7 +610,7 @@ const alphabet = {
     "twoVar8": 60
   },
   "2": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 10,
     "oneVar2": 85,
@@ -631,7 +631,7 @@ const alphabet = {
     "twoVar8": 190
   },
   "3": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 5,
     "oneVar2": 75,
@@ -652,7 +652,7 @@ const alphabet = {
     "twoVar8": 120,
   },
   "4": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 95,
     "oneVar2": 135,
@@ -673,7 +673,7 @@ const alphabet = {
     "twoVar8": 100
   },
   "5": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 15,
     "oneVar2": 125,
@@ -694,7 +694,7 @@ const alphabet = {
     "twoVar8": 125
   },
   "6": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 15,
     "oneVar2": 125,
@@ -715,7 +715,7 @@ const alphabet = {
     "twoVar8": 32
   },
   "7": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 15,
     "oneVar2": 110,
@@ -736,7 +736,7 @@ const alphabet = {
     "twoVar8": 45
   },
   "8": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 60,
     "oneVar2": 120,
@@ -757,7 +757,7 @@ const alphabet = {
     "twoVar8": 110,
   },
   "9": {
-    "shear": 0,
+    "opacity": 1,
 
     "oneVar1": 85,
     "oneVar2": 57,
