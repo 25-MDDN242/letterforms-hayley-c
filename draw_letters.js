@@ -1,5 +1,5 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#000000";
+var systemBackgroundColor = "#E5E0D9";
 var systemLineColor = "#D3D3D3";
 var systemBoxColor = "#C73869";
 
@@ -43,7 +43,7 @@ function lined(letterData){
   let bezierOneX4 = letterData["oneVar7"]; // second anchor point x
   let bezierOneY4 = letterData["oneVar8"]; // second anchor point y
   
-  stroke(217, 217, 217, opacity); // light grey
+  stroke(137, 152, 177, opacity); // light grey
   strokeWeight(3); // stroke weight
   noFill(); // no fill
   // outer curve
@@ -68,7 +68,7 @@ function solid(letterData){
   let bezierTwoY4 = letterData["twoVar8"]; // second anchor point y
   
   noStroke(); // no stroke
-  fill(217, 217, 217, opacity); // light grey
+  fill(137, 152, 177, opacity); // light grey
   //curve shape
   beginShape();
   vertex(bezierTwoX1, bezierTwoY1);
@@ -80,43 +80,37 @@ function solid(letterData){
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
 
-  /* minimum and maximum x coordinates */
+  /* Lined bezier interpolation */
 
-  let maxX = 100;
-  let oneThird = 25;
-  let twoThird = 75;
-  let minX = 0;
+  let maxX = 100; // maximum bounding box x coordinate
+  let oneQuarter = 25; // 1/4 bounding box x coordinate
+  let threeQuarter = 75; // 3/4 bounding box x coordinate
+  let minX = 0; // minimum bounding box x coordinate
 
-  if (percent < 25){
-    new_letter["oneVar1"] = map(percent, 0, 25, oldObj["oneVar1"], maxX);
-    new_letter["oneVar3"] = map(percent, 0, 25, oldObj["oneVar3"], twoThird);
-    new_letter["oneVar5"] = map(percent, 0, 25, oldObj["oneVar5"], oneThird);
-    new_letter["oneVar7"] = map(percent, 0, 25, oldObj["oneVar7"], minX);
+  if (percent < 33){
+    new_letter["oneVar1"] = map(percent, 0, 33, oldObj["oneVar1"], maxX);
+    new_letter["oneVar3"] = map(percent, 0, 33, oldObj["oneVar3"], threeQuarter);
+    new_letter["oneVar5"] = map(percent, 0, 33, oldObj["oneVar5"], oneQuarter);
+    new_letter["oneVar7"] = map(percent, 0, 33, oldObj["oneVar7"], minX);
   }
-  else if (percent > 25 && percent < 50) {
-    new_letter["oneVar1"] = map(percent, 25, 50, maxX, minX);
-    new_letter["oneVar3"] = map(percent, 25, 50, twoThird, oneThird);
-    new_letter["oneVar5"] = map(percent, 25, 50, oneThird, twoThird);
-    new_letter["oneVar7"] = map(percent, 25, 50, minX, maxX);
-  }
-  else if (percent > 50 && percent < 75){
-    new_letter["oneVar1"] = map(percent, 50, 75, minX, maxX);
-    new_letter["oneVar3"] = map(percent, 50, 75, oneThird, twoThird);
-    new_letter["oneVar5"] = map(percent, 50, 75, twoThird, oneThird);
-    new_letter["oneVar7"] = map(percent, 50, 75, maxX, minX);
+  else if (percent > 33 && percent < 66) {
+    new_letter["oneVar1"] = map(percent, 33, 66, maxX, minX);
+    new_letter["oneVar3"] = map(percent, 33, 66, threeQuarter, oneQuarter);
+    new_letter["oneVar5"] = map(percent, 33, 66, oneQuarter, threeQuarter);
+    new_letter["oneVar7"] = map(percent, 33, 66, minX, maxX);
   }
   else {
-    new_letter["oneVar1"] = map(percent, 75, 100, maxX, newObj["oneVar1"]);
-    new_letter["oneVar3"] = map(percent, 75, 100, twoThird, newObj["oneVar3"]);
-    new_letter["oneVar5"] = map(percent, 75, 100, oneThird, newObj["oneVar5"]);
-    new_letter["oneVar7"] = map(percent, 75, 100, minX, newObj["oneVar7"]);
+    new_letter["oneVar1"] = map(percent, 66, 100, minX, newObj["oneVar1"]);
+    new_letter["oneVar3"] = map(percent, 66, 100, oneQuarter, newObj["oneVar3"]);
+    new_letter["oneVar5"] = map(percent, 66, 100, threeQuarter, newObj["oneVar5"]);
+    new_letter["oneVar7"] = map(percent, 66, 100, maxX, newObj["oneVar7"]);
   }
 
-  /* shrink solid bezier */
+  /* Solid bezier interpolation */
 
-  let transparent = 0.25;
-  let centreX = 50;
-  let centreY = 95;
+  let transparent = 0.10; // minimum opacity
+  let centreX = 50; // Horizontally centre solid bezier
+  let centreY = 95; // Shrink and vertically centre solid bezier length
 
   if(percent < 50){
     new_letter["opacity"] = map(percent, 0, 50, oldObj["opacity"], transparent);
@@ -167,8 +161,11 @@ function interpolate_letter(percent, oldObj, newObj) {
 }
 
 var swapWords = [
-  "ABBAABBA",
-  "CAB?CAB?",
-  "BAAAAAAA"
+  "TWISTING",
+  "SWIRLING",
+  "SPIRALED",
+  "WHIRLING",
+  "TWIRLING",
+  "PAINTED"
 ]
 
