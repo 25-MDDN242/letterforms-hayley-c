@@ -1,5 +1,5 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#E5E0D9";
+var systemBackgroundColor = "#8998B1";
 var systemLineColor = "#D3D3D3";
 var systemBoxColor = "#C73869";
 
@@ -43,7 +43,7 @@ function lined(letterData){
   let bezierOneX4 = letterData["oneVar7"]; // second anchor point x
   let bezierOneY4 = letterData["oneVar8"]; // second anchor point y
   
-  stroke(137, 152, 177, opacity); // light grey
+  stroke(255, 255, 255, opacity); // light grey
   strokeWeight(3); // stroke weight
   noFill(); // no fill
   // outer curve
@@ -68,7 +68,7 @@ function solid(letterData){
   let bezierTwoY4 = letterData["twoVar8"]; // second anchor point y
   
   noStroke(); // no stroke
-  fill(137, 152, 177, opacity); // light grey
+  fill(255, 255, 255, opacity); // light grey
   //curve shape
   beginShape();
   vertex(bezierTwoX1, bezierTwoY1);
