@@ -1,5 +1,5 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#8998B1";
+var systemBackgroundColor = "#AEE3A1";
 var systemLineColor = "#D3D3D3";
 var systemBoxColor = "#C73869";
 
@@ -21,13 +21,13 @@ function drawLetter(letterData) {
   colorMode(RGB, 255, 255, 255, 1);
   angleMode(DEGREES);
 
-  push();
+  
   push();
   lined(letterData); // lined bezier shape
   pop();
 
   solid(letterData); // solid bezier shape
-  pop();
+  
 }
 
 /* lined bezier shape */
@@ -43,7 +43,7 @@ function lined(letterData){
   let bezierOneX4 = letterData["oneVar7"]; // second anchor point x
   let bezierOneY4 = letterData["oneVar8"]; // second anchor point y
   
-  stroke(255, 255, 255, opacity); // light grey
+  stroke(174, 141, 132, opacity); // light grey
   strokeWeight(3); // stroke weight
   noFill(); // no fill
   // outer curve
@@ -68,7 +68,7 @@ function solid(letterData){
   let bezierTwoY4 = letterData["twoVar8"]; // second anchor point y
   
   noStroke(); // no stroke
-  fill(255, 255, 255, opacity); // light grey
+  fill(71, 219, 219, opacity); // light grey
   //curve shape
   beginShape();
   vertex(bezierTwoX1, bezierTwoY1);
@@ -83,37 +83,38 @@ function interpolate_letter(percent, oldObj, newObj) {
   /* Lined bezier interpolation */
 
   let maxX = 100; // maximum bounding box x coordinate
-  let oneQuarter = 25; // 1/4 bounding box x coordinate
-  let threeQuarter = 75; // 3/4 bounding box x coordinate
+  let oneQuarterX = 25; // 1/4 bounding box x coordinate
+  let threeQuarterX = 75; // 3/4 bounding box x coordinate
   let minX = 0; // minimum bounding box x coordinate
 
+  // from old letter to spinning starting point
   if (percent < 33){
     new_letter["oneVar1"] = map(percent, 0, 33, oldObj["oneVar1"], maxX);
-    new_letter["oneVar3"] = map(percent, 0, 33, oldObj["oneVar3"], threeQuarter);
-    new_letter["oneVar5"] = map(percent, 0, 33, oldObj["oneVar5"], oneQuarter);
+    new_letter["oneVar3"] = map(percent, 0, 33, oldObj["oneVar3"], threeQuarterX);
+    new_letter["oneVar5"] = map(percent, 0, 33, oldObj["oneVar5"], oneQuarterX);
     new_letter["oneVar7"] = map(percent, 0, 33, oldObj["oneVar7"], minX);
   }
+  // from spinning start point to spinning end point
   else if (percent > 33 && percent < 66) {
     new_letter["oneVar1"] = map(percent, 33, 66, maxX, minX);
-    new_letter["oneVar3"] = map(percent, 33, 66, threeQuarter, oneQuarter);
-    new_letter["oneVar5"] = map(percent, 33, 66, oneQuarter, threeQuarter);
+    new_letter["oneVar3"] = map(percent, 33, 66, threeQuarterX, oneQuarterX);
+    new_letter["oneVar5"] = map(percent, 33, 66, oneQuarterX, threeQuarterX);
     new_letter["oneVar7"] = map(percent, 33, 66, minX, maxX);
   }
+  // from spinning end point to new letter
   else {
     new_letter["oneVar1"] = map(percent, 66, 100, minX, newObj["oneVar1"]);
-    new_letter["oneVar3"] = map(percent, 66, 100, oneQuarter, newObj["oneVar3"]);
-    new_letter["oneVar5"] = map(percent, 66, 100, threeQuarter, newObj["oneVar5"]);
+    new_letter["oneVar3"] = map(percent, 66, 100, oneQuarterX, newObj["oneVar3"]);
+    new_letter["oneVar5"] = map(percent, 66, 100, threeQuarterX, newObj["oneVar5"]);
     new_letter["oneVar7"] = map(percent, 66, 100, maxX, newObj["oneVar7"]);
   }
 
   /* Solid bezier interpolation */
-
-  let transparent = 0.10; // minimum opacity
   let centreX = 50; // Horizontally centre solid bezier
   let centreY = 95; // Shrink and vertically centre solid bezier length
 
   if(percent < 50){
-    new_letter["opacity"] = map(percent, 0, 50, oldObj["opacity"], transparent);
+    // new_letter["opacity"] = map(percent, 0, 50, oldObj["opacity"], transparent);
     new_letter["twoVar1"] = map(percent, 0, 50, oldObj["twoVar1"], centreX);
     new_letter["twoVar2"] = map(percent, 0, 50, oldObj["twoVar2"], centreY);
     new_letter["twoVar3"] = map(percent, 0, 50, oldObj["twoVar3"], centreX);
@@ -124,7 +125,7 @@ function interpolate_letter(percent, oldObj, newObj) {
     new_letter["twoVar8"] = map(percent, 0, 50, oldObj["twoVar8"], centreY);
   }
   else{
-    new_letter["opacity"] = map(percent, 50, 100, transparent, newObj["opacity"]);
+    // new_letter["opacity"] = map(percent, 50, 100, transparent, newObj["opacity"]);
     new_letter["twoVar1"] = map(percent, 50, 100, centreX, newObj["twoVar1"]);
     new_letter["twoVar2"] = map(percent, 50, 100, centreY, newObj["twoVar2"]);
     new_letter["twoVar3"] = map(percent, 50, 100, centreX, newObj["twoVar3"]);
@@ -135,28 +136,26 @@ function interpolate_letter(percent, oldObj, newObj) {
     new_letter["twoVar8"] = map(percent, 50, 100, centreY, newObj["twoVar8"]);
   }
 
+  /* opacity interpolation */
+
+  let transparent = 0.3; // minimum opacity
+
+  if(percent < 25){
+    new_letter["opacity"] = map(percent, 0, 25, oldObj["opacity"], transparent);
+  }
+  else if (percent > 75){
+    new_letter["opacity"] = map(percent, 75, 100, transparent, newObj["opacity"]);
+  }
+  else {
+    new_letter["opacity"] = transparent
+  }
+
   /* linear interpolation */
 
-  // new_letter["opacity"] = map(percent, 0, 100, oldObj["opacity"], newObj["opacity"]);
-
-  // new_letter["oneVar1"] = map(percent, 0, 100, oldObj["oneVar1"], newObj["oneVar1"]);
   new_letter["oneVar2"] = map(percent, 0, 100, oldObj["oneVar2"], newObj["oneVar2"]);
-  // new_letter["oneVar3"] = map(percent, 0, 100, oldObj["oneVar3"], newObj["oneVar3"]);
   new_letter["oneVar4"] = map(percent, 0, 100, oldObj["oneVar4"], newObj["oneVar4"]);
-  // new_letter["oneVar5"] = map(percent, 0, 100, oldObj["oneVar5"], newObj["oneVar5"]);
   new_letter["oneVar6"] = map(percent, 0, 100, oldObj["oneVar6"], newObj["oneVar6"]);
-  // new_letter["oneVar7"] = map(percent, 0, 100, oldObj["oneVar7"], newObj["oneVar7"]);
   new_letter["oneVar8"] = map(percent, 0, 100, oldObj["oneVar8"], newObj["oneVar8"]);
-
-  // new_letter["twoVar1"] = map(percent, 0, 100, oldObj["twoVar1"], newObj["twoVar1"]);
-  // new_letter["twoVar2"] = map(percent, 0, 100, oldObj["twoVar2"], newObj["twoVar2"]);
-  // new_letter["twoVar3"] = map(percent, 0, 100, oldObj["twoVar3"], newObj["twoVar3"]);
-  // new_letter["twoVar4"] = map(percent, 0, 100, oldObj["twoVar4"], newObj["twoVar4"]);
-  // new_letter["twoVar5"] = map(percent, 0, 100, oldObj["twoVar5"], newObj["twoVar5"]);
-  // new_letter["twoVar6"] = map(percent, 0, 100, oldObj["twoVar6"], newObj["twoVar6"]);
-  // new_letter["twoVar7"] = map(percent, 0, 100, oldObj["twoVar7"], newObj["twoVar7"]);
-  // new_letter["twoVar8"] = map(percent, 0, 100, oldObj["twoVar8"], newObj["twoVar8"]);
- 
   return new_letter;
 }
 

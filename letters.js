@@ -171,7 +171,7 @@ const alphabet = {
   "H": {
     "opacity": 1,
 
-    "oneVar1": 30,
+    "oneVar1": 28,
     "oneVar2": 195,
     "oneVar3": -10,
     "oneVar4": 130,
@@ -255,22 +255,22 @@ const alphabet = {
   "L": {
     "opacity": 1,
     
-    "oneVar1": 65,
-    "oneVar2": 200,
-    "oneVar3": 0,
-    "oneVar4": 175,
-    "oneVar5": 80,
-    "oneVar6": 25,
+    "oneVar1": 48,
+    "oneVar2": 150,
+    "oneVar3": 20,
+    "oneVar4": 100,
+    "oneVar5": 75,
+    "oneVar6": 45,
     "oneVar7": 30,
     "oneVar8": 0,
 
-    "twoVar1": 65,
-    "twoVar2": 200,
-    "twoVar3": 40,
-    "twoVar4": 180,
-    "twoVar5": 35,
-    "twoVar6": 165,
-    "twoVar7": 45,
+    "twoVar1": 63,
+    "twoVar2": 201,
+    "twoVar3": 35,
+    "twoVar4": 179,
+    "twoVar5": 33,
+    "twoVar6": 145,
+    "twoVar7": 49,
     "twoVar8": 50
   },
   "M": {
@@ -486,22 +486,22 @@ const alphabet = {
   "W": {
     "opacity": 1,
 
-    "oneVar1": 55,
-    "oneVar2": 135,
+    "oneVar1": 54,
+    "oneVar2": 138,
     "oneVar3": 10,
-    "oneVar4": 265,
+    "oneVar4": 270,
     "oneVar5": -15,
     "oneVar6": 140,
     "oneVar7": 25,
     "oneVar8": 100,
 
     "twoVar1": 55,
-    "twoVar2": 135,
+    "twoVar2": 137,
     "twoVar3": 65,
     "twoVar4": 275,
     "twoVar5": 110,
     "twoVar6": 150,
-    "twoVar7": 85,
+    "twoVar7": 83,
     "twoVar8": 100
   },
   "X": {
