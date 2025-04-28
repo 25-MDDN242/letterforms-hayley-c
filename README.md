@@ -29,9 +29,9 @@ The 16 parameters per letter are:
 * 'twoVar7' : Solid bezier second anchor point X
 * 'twoVar8' : Solid bezier second anchor point Y
 
-#### Process
+### Process
 
-##### Sketch
+#### Sketch
 <img src = "https://i.pinimg.com/736x/48/f2/dd/48f2ddc328439dcb1d841bd3b5206b21.jpg" alt = "Different typefaces for G" width = "500">
 
 My sketch was inspired by the second typeface in this image, that used many curved lines that joined at a single point to create the different parts of the letter. To apply this to the code I tried to keep the anchor point of the letter parts the same, but I simplified the style slightly to use three lines.
@@ -40,9 +40,10 @@ This used a total of 13 parameters, as the two parts each needed 6 coordinates. 
 
 <img src = "/assets/sketch.jpg" alt = "Sketch of initial idea" width = "500">
 
-##### Different Font
+#### Different Font
 
 When adding letters to the alphabet following my sketch idea, the characters began to look like scribbles and were quite messy.
+
 <img src = "/assets/sketchy.png" alt = "Sketched font" width = "500">
 
 I tried out a different font idea, using yin yang shapes to form the main part of the letter and extending the curved shape to form the secondary part. Although I liked the use of the yin yang shape, once adding the stems, I wasn't sure about the overall form. 
@@ -55,17 +56,17 @@ I switched back to the code I had used for my sketch, and altered it slighty to 
 
 I was not sure whether to continue developing the yin yang font or the brushstroke font. To help myself decide between the two, I changed the colour palette to a unappealing colour palette.
 
-<img src = "/assets/blueBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "500">
+<img src = "/assets/blueOrangeBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "500">
 
 <img src = "/assets/blueOrangeYinYang.png" alt = "Yin yang font in a orange and blue colour palette" width = "500">
 
 I chose to continue with the brush calligraphy font, as I thought that this font looks better regardless of the colour palette. This style also allows me to better refine each of the letters to create a readable and cohesive typeface.
 
-##### Alphabet
+#### Alphabet
 
 Because the code to draw the letterforms and the parameters is better suited to letters with two parts and either vertical or curved shapes, some letters and numbers such as m, z, 1, 2, 5, and 7, are less refined and readable than the rest of the alphabet.
 
-##### Interpolation
+#### Interpolation
 
 After adding the linear interpolation, I didn't have a clear idea of how the interpolation would look. To keep a similar feeling to the design of the letterforms, I wanted to explore using twisting, reflecting, and growing motions as ways to change between the letters.
 
