@@ -214,6 +214,50 @@ function draw () {
 
   background(systemBackgroundColor);
 
+  let backgroundArray = [
+    [0, 0, 250, 300, 300, 0, 1000, 100, 300, 10, 250, 310, 0, 25],
+    [0, 100, 250, 400, 400, 25, 950, 150, 400, 35, 250, 410, 0, 125],
+    [0, 200, 250, 500, 500, 50, 850, 200, 500, 60, 250, 510, 0, 225],
+    [960, 100, 840, 200, 200, 500, -50, 475, 240, 510, 840, 240, 960, 150],
+    [600, 300, 500, 450, 400, 370, 300, 500, 400, 375, 500, 455, 615, 300],
+    [675, 275, 575, 500, 375, 420, 375, 500, 400, 425, 575, 505, 690, 275],
+    [750, 250, 650, 550, 350, 470, 450, 500, 400, 475, 650, 555, 760, 250],
+    [825, 200, 725, 600, 325, 520, 525, 500, 400, 525, 725, 605, 835, 200],
+    [900, 150, 800, 650, 300, 570, 600, 500, 400, 575, 800, 655, 910, 150],
+    [975, 100, 875, 700, 275, 620, 675, 500, 400, 625, 875, 705, 985, 100],
+  ]
+
+  // push();
+  // colorMode(HSB, 360, 100, 100, 100);
+  // noStroke();
+  // fill(217, 60, 96, 100);
+  
+  // for (let i = 0; i < backgroundArray.length; i++){
+  //   let vertexX = backgroundArray[i][0];
+  //   let vertexY = backgroundArray[i][1];
+  //   let controlOneX = backgroundArray[i][2];
+  //   let controlOneY = backgroundArray[i][3];
+  //   let controlTwoX = backgroundArray[i][4];
+  //   let controlTwoY = backgroundArray[i][5];
+  //   let anchorOneX = backgroundArray[i][6];
+  //   let anchorOneY = backgroundArray[i][7];
+  //   let controlThreeX = backgroundArray[i][8];
+  //   let controlThreeY = backgroundArray[i][9];
+  //   let controlFourX = backgroundArray[i][10];
+  //   let controlFourY = backgroundArray[i][11];
+  //   let anchorTwoX = backgroundArray[i][12];
+  //   let anchorTwoY = backgroundArray[i][13];
+
+  //   beginShape();
+  //   vertex(vertexX, vertexY);
+  //   bezierVertex(controlOneX, controlOneY, controlTwoX, controlTwoY, anchorOneX, anchorOneY);
+  //   bezierVertex(controlThreeX, controlThreeY, controlFourX, controlFourY, anchorTwoX, anchorTwoY);
+  //   endShape();
+  // }
+  // filter(BLUR, 6);
+  // pop();
+
+
   // shorthand variables to allow margin
   var o = 20
   var w2 = width - 2 * o
