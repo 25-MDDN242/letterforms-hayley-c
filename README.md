@@ -7,7 +7,7 @@ Description
 
 The characters in my alphabet are composed of bezier curves and shapes. The solid shape creates the dominant downstroke, and the lined shape forms the secondary part.
 
-The coordinates of the two anchor points and two control points are all controlled by parameters, totalling eight parameters for each of the bezier shapes. Therefore I have used 16 parameters, which is slightly more than the recommended.
+All together, the typeface is formed from 17 parameters. The beziers' anchor points and control points are all controlled by parameters, totalling 16 parameters for the letter shapes. For the purpoose of the interpolation, I have used a parameter for the alpha value to control the opacty. 
 
 The 17 parameters per letter are:
 * 'opacity': Alpha value
@@ -36,67 +36,63 @@ It is worth noting that interaction.html does not highlight the complete interpo
 #### [Sketch](sketch.html)
 <img src = "https://i.pinimg.com/736x/48/f2/dd/48f2ddc328439dcb1d841bd3b5206b21.jpg" alt = "Different typefaces for G" width = "500">
 
-My sketch was inspired by the second typeface in this image, that used many curved lines that joined at a single point to create the different parts of the letter. To apply this to the code I tried to keep the anchor point of the letter parts the same, but I simplified the style slightly to use three lines.
-
-This used a total of 13 parameters, as the two parts each needed 6 coordinates. For the sketch I had used a boolean expression for the "stem".
+My sketch was inspired by the second typeface in this image, that uses many curved lines that join at a single point to form the letter. 
+For the code, I kept the anchor point of the letter parts the same and simplified the style to use three lines, using a total of 13 parameters.
 
 <img src = "/assets/sketch.jpg" alt = "Sketch of initial idea" width = "500">
 
 #### Different Font
 
-When adding letters to the alphabet following my sketch idea, the characters began to look like scribbles and were quite messy.
+When adding more letters to my sketch idea, they began to look like messy scribbles.
 
 <img src = "/assets/sketchy.png" alt = "Sketched font" width = "500">
 
-I tried out a different font idea, using yin yang shapes to form the main part of the letter and extending the curved shape to form the secondary part. Although I liked the use of the yin yang shape, once adding the stems, I wasn't sure about the overall form. 
+So, I tried a different idea, using yin yang shapes and extending the curve. Although I liked the use of the yin yang shape, I wasn't sure about the overall form when adding the stems. 
 
 <img src = "/assets/yinyang.png" alt = "Yin yang font" width = "500">
 
-I switched back to the code I had used for my sketch, and altered it slighty to change the letter forms. Rather than having both part comprised of lines, I filled the downstroke to make it a solid shape, and separated the starts and ends of the bezier curve shapes, creating a brush calligraphy aesthetic. Although this uses more parameters, I think it greatly improves the appearance of the letters and allows for more flexibility for certain characters.
+I returned to the sketch's code and altered it to create a  font similar to modern calligraphy, with a solid bezier downstroke and separated bezier curve lines. Though using more parameters, it improved the aesthetic and allowed more flexibility for eeach letter.
 
 <img src = "/assets/linedSolid.png" alt = "Solid and lined brush calligraphy font" width = "500">
 
-I was not sure whether to continue developing the yin yang font or the brushstroke font. To help myself decide between the two, I changed the colour palette to a unappealing colour palette.
+Unssure which font to continue developing, I tried a clashing colour palette to help myself decide. 
+I chose to continue with the brush calligraphy font, as I thought that this font looks better regardless of the colour palette. This style also allows me to better refine each of the letters to create a readable and cohesive typeface.
 
 <img src = "/assets/blueOrangeBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "250">
 <img src = "/assets/blueOrangeYinYang.png" alt = "Yin yang font in a orange and blue colour palette" width = "250">
 
-I chose to continue with the brush calligraphy font, as I thought that this font looks better regardless of the colour palette. This style also allows me to better refine each of the letters to create a readable and cohesive typeface.
-
 #### [Alphabet](alphabet.html)
+
+Initial Alphabet:
+<img src = "/assets/initial alphabet.jpg" alt = "Initial alphabet iteration" width = "500">
+
+Final Alphabet:
 
 Because the code to draw the letterforms and the parameters is better suited to letters with two parts and either vertical or curved shapes, some letters and numbers such as m, z, 1, 2, 5, and 7, are less refined and readable than the rest of the alphabet.
 
 #### [Interpolation](interaction.html)
 
-After adding the linear interpolation, I didn't have a clear idea of how the interpolation would look. To keep a similar feeling to the design of the letterforms, I wanted to explore using twisting, reflecting, and growing motions as ways to change between the letters.
+After adding the linear interpolation, I explored using twisting, reflecting, and growing motions to reflect the tapering shape of the letters.
 
-To get used to the interpolation system, I first tried shortening the length of the solid bezier curve to reach a minimum at the halfway point of the interpolation, from which it would then lengthen to the new letter. I liked the way this interpolation animation looked, having the solid bezier return to a default state while changing letters.
+I first tried shortening the length of the solid bezier curve to reach a minimum halfway through the interpolation, before lengthening. I liked the animation of changing length and having the solid bezier return to a default state.
 
 <img src = "/assets/solidMinimum.jpg" alt = "Solid bezier curve shortening then lengthening interpolation" width = "500">
 
-I then had the idea to try use the maximum and minimum x coordinates to create the illusion of the letter twisting. The two anchor points move between the x coordinates of 0 and 100, doing one and a half rotations before forming the new letter. This animation on the solid bezier curve was very quick and appeared as more of a rattle than a twist, which was not the effect I was going for.
+I then used the maximum and minimum bounding box x coordinates to create the illusion of the letter twisting. This animation on the solid bezier curve was very quick and appeared as more of a rattle than a twist, which was not the effect I was going for.
 
 <img src = "/assets/solidMinMax.jpg" alt = "Solid bezier curve moves to minimum and maximum x coordinates" width = "500">
 
-I tried adding a parameter to change the scale of the letters. Rather than shrinking the whole letter, I narrowed the letter for the first half of the animation before it widens again for the new letter. However, I thought the animation was quite boring.
+Other interpolations I tried were adding a scale parameter to narrow the letters and also adding a shear parameter to warp the letters. These not only needed mre parameters, but I also found the movement either too boring or jarring so they didn't fit with the letterforms.
 
+Narrowing: 
 <img src = "/assets/horizontalShrink.jpg" alt = "Narrowing then widening letter interpolation" width = "500">
 
-I still wanted to create a twisting and spinning animation to interpolate the letters, trying to add a shear parameter to do so. I first animated the whole letter and then just the lined bezier curve. I found the motion quite jarring and choppy which I though clashed with the design of the letters themselves. Also, with the number of paramters I was alreadying using, I didn't think these extra ones were necessary for interpolation.
-
+Warping:
 <img src = "/assets/scaleShear.jpg" alt = "Whole letter shrinking and shearing along the X axis" width = "250">
-<img src = "/assets/lineShear.jpg" alt = "Lined bezier curve skewed along the X axis" width = "250">
 
-From exploring interpolation with these added parameters, I though these extra ones weren't necessary for interpolation, especially with the number of paramters I was alreadying using.
-
-I found that using the existing bezier curve parameters for interpolation had better results than adding additional parameters. I went back to shortening the length as a default intermediate stage for the solid bezier curve, and then started to iterate the minimum and maximum x coordinate interpolation. I found the twisting effect was clearer on the lined bezier curve than the solid bezier curve, as the line bezier curve makes up the shorter, wider, horizontal, or rounded parts of the letters so the animation was more dramatic. With the anchor points already animating, I then animated the two control points to move between 25 and 75 before forming the new letter. I tried adding a parameter two interpolate the letters' opacity, though this effect may work better with a different colour palette.
+I found that using the existing parameters for interpolation had better results. Using the minimum and maximum x coordinate interpolation on the bezier curve lines created a clearer twisting effect, because of the shorter, wider, horizontal, or rounded shape. I also adjusted the interpolation percent stages to slow down the twist and make it smoother. An additional parameter I added is opacity to control the alpha value, which creates the illusion of motion blur.
 
 <img src = "/assets/twistInitial.jpg" alt = "Twisting lined bezier, and shortening solid bezier letters" width = "500">
-
-I still found the animation a bit too quick, so rather than using 25% intervals for the different stages of the interpolation, I changed it to use 33% intervals. Rather than the one and a half rotations, the letters only rotate once, so the animation is slower and more refined which better fits the letters' appearance. I also started experimenting with colour palettes, first trying blue letters on a cream background, which I think helped with the interpolating opacity.
-
-<img src = "/assets/creamBlue.jpg" alt = "Slower twisting blue letters on a cream background" width = "500">
 
 #### Styling
 After creating the letterform shapes and interpolation, I thought 

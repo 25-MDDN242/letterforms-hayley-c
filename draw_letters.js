@@ -179,8 +179,8 @@ function interpolate_letter(percent, oldObj, newObj) {
 }
 
 var swapWords = [
-  "FEATHERY",
   "TWISTING",
+  "FEATHERY",
   "WHISPERS",
   "SWIRLING",
   "!BREEZE!",
