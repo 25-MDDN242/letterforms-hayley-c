@@ -227,35 +227,35 @@ function draw () {
     [975, 100, 875, 700, 275, 620, 675, 500, 400, 625, 875, 705, 985, 100],
   ]
 
-  // push();
-  // colorMode(HSB, 360, 100, 100, 100);
-  // noStroke();
-  // fill(217, 60, 96, 100);
+  push();
+  colorMode(HSB, 360, 100, 100, 100);
+  noStroke();
+  fill(217, 60, 96, 100);
   
-  // for (let i = 0; i < backgroundArray.length; i++){
-  //   let vertexX = backgroundArray[i][0];
-  //   let vertexY = backgroundArray[i][1];
-  //   let controlOneX = backgroundArray[i][2];
-  //   let controlOneY = backgroundArray[i][3];
-  //   let controlTwoX = backgroundArray[i][4];
-  //   let controlTwoY = backgroundArray[i][5];
-  //   let anchorOneX = backgroundArray[i][6];
-  //   let anchorOneY = backgroundArray[i][7];
-  //   let controlThreeX = backgroundArray[i][8];
-  //   let controlThreeY = backgroundArray[i][9];
-  //   let controlFourX = backgroundArray[i][10];
-  //   let controlFourY = backgroundArray[i][11];
-  //   let anchorTwoX = backgroundArray[i][12];
-  //   let anchorTwoY = backgroundArray[i][13];
+  for (let i = 0; i < backgroundArray.length; i++){
+    let vertexX = backgroundArray[i][0];
+    let vertexY = backgroundArray[i][1];
+    let controlOneX = backgroundArray[i][2];
+    let controlOneY = backgroundArray[i][3];
+    let controlTwoX = backgroundArray[i][4];
+    let controlTwoY = backgroundArray[i][5];
+    let anchorOneX = backgroundArray[i][6];
+    let anchorOneY = backgroundArray[i][7];
+    let controlThreeX = backgroundArray[i][8];
+    let controlThreeY = backgroundArray[i][9];
+    let controlFourX = backgroundArray[i][10];
+    let controlFourY = backgroundArray[i][11];
+    let anchorTwoX = backgroundArray[i][12];
+    let anchorTwoY = backgroundArray[i][13];
 
-  //   beginShape();
-  //   vertex(vertexX, vertexY);
-  //   bezierVertex(controlOneX, controlOneY, controlTwoX, controlTwoY, anchorOneX, anchorOneY);
-  //   bezierVertex(controlThreeX, controlThreeY, controlFourX, controlFourY, anchorTwoX, anchorTwoY);
-  //   endShape();
-  // }
-  // filter(BLUR, 6);
-  // pop();
+    beginShape();
+    vertex(vertexX, vertexY);
+    bezierVertex(controlOneX, controlOneY, controlTwoX, controlTwoY, anchorOneX, anchorOneY);
+    bezierVertex(controlThreeX, controlThreeY, controlFourX, controlFourY, anchorTwoX, anchorTwoY);
+    endShape();
+  }
+  filter(BLUR, 6);
+  pop();
 
 
   // shorthand variables to allow margin
