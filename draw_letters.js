@@ -1,5 +1,5 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#4287F5";
+var systemBackgroundColor = "#8F99FB";
 var systemLineColor = "#D3D3D3";
 var systemBoxColor = "#C73869";
 
@@ -191,6 +191,7 @@ var swapWords = [
   "TWIRLING",
   "FLOATING",
   "DRIFTING",
-  "CYCLONE!"
+  "CYCLONE!",
+  "!034689!"
 ]
 

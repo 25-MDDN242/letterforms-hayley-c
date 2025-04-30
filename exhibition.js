@@ -230,7 +230,7 @@ function draw () {
   push();
   colorMode(HSB, 360, 100, 100, 100);
   noStroke();
-  fill(217, 60, 96, 100);
+  fill(240, 30, 100, 100);
   
   for (let i = 0; i < backgroundArray.length; i++){
     let vertexX = backgroundArray[i][0];

@@ -5,36 +5,35 @@
 ### TITLE
 Description
 
-The characters in my alpphabet are composed of bezier curve shapes. The solid shape creates the dominant downstroke, and the lined shape forms the secondary part.
+The characters in my alphabet are composed of bezier curves and shapes. The solid shape creates the dominant downstroke, and the lined shape forms the secondary part.
 
 The coordinates of the two anchor points and two control points are all controlled by parameters, totalling eight parameters for each of the bezier shapes. Therefore I have used 16 parameters, which is slightly more than the recommended.
 
-The 16 parameters per letter are:
+The 17 parameters per letter are:
+* 'opacity': Alpha value
+* 'linedVar1': Lined bezier first anchor point X
+* 'linedVar2': Lined bezier first anchor point Y
+* 'linedVar3': Lined bezier first control point X
+* 'linedVar4': Lined bezier first control point Y
+* 'linedVar5': Lined bezier second control point X
+* 'linedVar6': Lined bezier second control point Y
+* 'linedVar7': Lined bezier second anchor point X
+* 'linedVar8': Lined bezier second anchor point Y
+* 'solidVar1': Solid bezier first anchor point X
+* 'solidVar2': Solid bezier first anchor point Y
+* 'solidVar3': Solid bezier first control point X
+* 'solidVar4': Solid bezier first control point Y
+* 'solidVar5': Solid bezier second control point X
+* 'solidVar6': Solid bezier second control point Y
+* 'solidVar7': Solid bezier second anchor point X
+* 'solidVar8': Solid bezier second anchor point Y
 
-* 'linedVar1' : Lined bezier first anchor point X
-* 'linedVar2' : Lined bezier first anchor point Y
-* 'linedVar3' : Lined bezier first control point X
-* 'linedVar4' : Lined bezier first control point Y
-* 'linedVar5' : Lined bezier second control point X
-* 'linedVar6' : Lined bezier second control point Y
-* 'linedVar7' : Lined bezier second anchor point X
-* 'linedVar8' : Lined bezier second anchor point Y
-
-* 'solidVar1' : Solid bezier first anchor point X
-* 'solidVar2' : Solid bezier first anchor point Y
-* 'solidVar3' : Solid bezier first control point X
-* 'solidVar4' : Solid bezier first control point Y
-* 'solidVar5' : Solid bezier second control point X
-* 'solidVar6' : Solid bezier second control point Y
-* 'solidVar7' : Solid bezier second anchor point X
-* 'solidVar8' : Solid bezier second anchor point Y
-
-The interpolation
-It is worth noting that the interaction.html does not highlight the complete interpolation of the lined bezier curves, as the  
+The letters interpolate through a twisting motion, making the old letter appear to be whisked away before forming the new letter.
+It is worth noting that interaction.html does not highlight the complete interpolation of the lined bezier curves, as the  
 
 ### Process
 
-#### Sketch
+#### [Sketch](sketch.html)
 <img src = "https://i.pinimg.com/736x/48/f2/dd/48f2ddc328439dcb1d841bd3b5206b21.jpg" alt = "Different typefaces for G" width = "500">
 
 My sketch was inspired by the second typeface in this image, that used many curved lines that joined at a single point to create the different parts of the letter. To apply this to the code I tried to keep the anchor point of the letter parts the same, but I simplified the style slightly to use three lines.
@@ -59,17 +58,16 @@ I switched back to the code I had used for my sketch, and altered it slighty to 
 
 I was not sure whether to continue developing the yin yang font or the brushstroke font. To help myself decide between the two, I changed the colour palette to a unappealing colour palette.
 
-<img src = "/assets/blueOrangeBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "500">
-
-<img src = "/assets/blueOrangeYinYang.png" alt = "Yin yang font in a orange and blue colour palette" width = "500">
+<img src = "/assets/blueOrangeBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "250">
+<img src = "/assets/blueOrangeYinYang.png" alt = "Yin yang font in a orange and blue colour palette" width = "250">
 
 I chose to continue with the brush calligraphy font, as I thought that this font looks better regardless of the colour palette. This style also allows me to better refine each of the letters to create a readable and cohesive typeface.
 
-#### Alphabet
+#### [Alphabet](alphabet.html)
 
 Because the code to draw the letterforms and the parameters is better suited to letters with two parts and either vertical or curved shapes, some letters and numbers such as m, z, 1, 2, 5, and 7, are less refined and readable than the rest of the alphabet.
 
-#### Interpolation
+#### [Interpolation](interaction.html)
 
 After adding the linear interpolation, I didn't have a clear idea of how the interpolation would look. To keep a similar feeling to the design of the letterforms, I wanted to explore using twisting, reflecting, and growing motions as ways to change between the letters.
 
@@ -87,9 +85,8 @@ I tried adding a parameter to change the scale of the letters. Rather than shrin
 
 I still wanted to create a twisting and spinning animation to interpolate the letters, trying to add a shear parameter to do so. I first animated the whole letter and then just the lined bezier curve. I found the motion quite jarring and choppy which I though clashed with the design of the letters themselves. Also, with the number of paramters I was alreadying using, I didn't think these extra ones were necessary for interpolation.
 
-<img src = "/assets/scaleShear.jpg" alt = "Whole letter shrinking and shearing along the X axis" width = "500">
-
-<img src = "/assets/lineShear.jpg" alt = "Lined bezier curve skewed along the X axis" width = "500">
+<img src = "/assets/scaleShear.jpg" alt = "Whole letter shrinking and shearing along the X axis" width = "250">
+<img src = "/assets/lineShear.jpg" alt = "Lined bezier curve skewed along the X axis" width = "250">
 
 From exploring interpolation with these added parameters, I though these extra ones weren't necessary for interpolation, especially with the number of paramters I was alreadying using.
 
@@ -100,5 +97,15 @@ I found that using the existing bezier curve parameters for interpolation had be
 I still found the animation a bit too quick, so rather than using 25% intervals for the different stages of the interpolation, I changed it to use 33% intervals. Rather than the one and a half rotations, the letters only rotate once, so the animation is slower and more refined which better fits the letters' appearance. I also started experimenting with colour palettes, first trying blue letters on a cream background, which I think helped with the interpolating opacity.
 
 <img src = "/assets/creamBlue.jpg" alt = "Slower twisting blue letters on a cream background" width = "500">
+
+#### Styling
+After creating the letterform shapes and interpolation, I thought 
+
+I wanted to create more depth within the letters themselves. so I added a gradient, referencing [odmundeetgen's gradient lines code](https://editor.p5js.org/odmundeetgen/sketches/qqmp0fVSK). I found that this gradient effect worked better for the lined beziers when there were five thinner curves rather than the three.
+
+I explored some colour palette feedback with a teal, pink, and purple font, taking inspiration from hummingbird feathers.
+<img src = "/assets/featherColour.jpg" alt = "Teal, pink, and purple feather font" width = "500">
+
+<img src = "/assets/withBackground.jpg" alt = "Slower twisting blue letters on a cream background" width = "500">
 
 
