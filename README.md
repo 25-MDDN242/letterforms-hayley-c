@@ -11,23 +11,26 @@ The coordinates of the two anchor points and two control points are all controll
 
 The 16 parameters per letter are:
 
-* 'oneVar1' : Lined bezier first anchor point X
-* 'oneVar2' : Lined bezier first anchor point Y
-* 'oneVar3' : Lined bezier first control point X
-* 'oneVar4' : Lined bezier first control point Y
-* 'oneVar5' : Lined bezier second control point X
-* 'oneVar6' : Lined bezier second control point Y
-* 'oneVar7' : Lined bezier second anchor point X
-* 'oneVar8' : Lined bezier second anchor point Y
+* 'linedVar1' : Lined bezier first anchor point X
+* 'linedVar2' : Lined bezier first anchor point Y
+* 'linedVar3' : Lined bezier first control point X
+* 'linedVar4' : Lined bezier first control point Y
+* 'linedVar5' : Lined bezier second control point X
+* 'linedVar6' : Lined bezier second control point Y
+* 'linedVar7' : Lined bezier second anchor point X
+* 'linedVar8' : Lined bezier second anchor point Y
 
-* 'twoVar1' : Solid bezier first anchor point X
-* 'twoVar2' : Solid bezier first anchor point Y
-* 'twoVar3' : Solid bezier first control point X
-* 'twoVar4' : Solid bezier first control point Y
-* 'twoVar5' : Solid bezier second control point X
-* 'twoVar6' : Solid bezier second control point Y
-* 'twoVar7' : Solid bezier second anchor point X
-* 'twoVar8' : Solid bezier second anchor point Y
+* 'solidVar1' : Solid bezier first anchor point X
+* 'solidVar2' : Solid bezier first anchor point Y
+* 'solidVar3' : Solid bezier first control point X
+* 'solidVar4' : Solid bezier first control point Y
+* 'solidVar5' : Solid bezier second control point X
+* 'solidVar6' : Solid bezier second control point Y
+* 'solidVar7' : Solid bezier second anchor point X
+* 'solidVar8' : Solid bezier second anchor point Y
+
+The interpolation
+It is worth noting that the interaction.html does not highlight the complete interpolation of the lined bezier curves, as the  
 
 ### Process
 
