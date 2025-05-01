@@ -214,6 +214,9 @@ function draw () {
 
   background(systemBackgroundColor);
 
+  /* background decoration */
+
+  // background bezier coordinates array
   let backgroundArray = [
     [0, 0, 250, 300, 300, 0, 1000, 100, 300, 10, 250, 310, 0, 25],
     [0, 125, 250, 400, 400, 25, 900, 150, 400, 35, 250, 410, 0, 150],
@@ -229,8 +232,9 @@ function draw () {
   push();
   colorMode(HSB, 360, 100, 100, 100);
   noStroke();
-  fill(234, 38, 98, 100);
+  fill(234, 38, 98, 100); // light periwinkle colour
   
+  // draw backgound bezier curves
   for (let i = 0; i < backgroundArray.length; i++){
     let vertexX = backgroundArray[i][0];
     let vertexY = backgroundArray[i][1];
@@ -253,7 +257,7 @@ function draw () {
     bezierVertex(controlThreeX, controlThreeY, controlFourX, controlFourY, anchorTwoX, anchorTwoY);
     endShape();
   }
-  filter(BLUR, 6);
+  filter(BLUR, 6); // blurring filter on background
   pop();
 
 

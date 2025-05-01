@@ -1,6 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/m3rrFl41)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18842563&assignment_repo_type=AssignmentRepo)
-## MDDN242 Project 2: Parametric Design <br> Swirling, by Hayley Chung
+## MDDN242 Project 2: Parametric Design <br> Swirling <br> By Hayley Chung
 
 Swirling is a set of letterforms created using parameterized bezier curves and shapes, to create an airy and whimsical typeface that is reminiscent of a swirling breeze. The letters are swept away by the wind in a twisting motion to be replaced by a new letter.
 
@@ -28,9 +28,9 @@ The 17 parameters per letter are:
 
 Note: Interaction.html does not highlight the complete interpolation of the lined bezier curves, as the letters reach the target coordinates at 33% and 66%. Therefore, the interpolation is is not shown to its full extent.
 
-### Process
+## Process
 
-#### [Sketch](sketch.html)
+### [Sketch](sketch.html)
 <img src = "https://i.pinimg.com/736x/48/f2/dd/48f2ddc328439dcb1d841bd3b5206b21.jpg" alt = "Different typefaces for G" width = "300">
 
 My sketch was inspired by the second typeface in this image, that uses many curved lines that join at a single point to form the letter. 
@@ -38,7 +38,7 @@ For the code, I kept the anchor point of the letter parts the same and simplifie
 
 <img src = "/assets/sketch.jpg" alt = "Sketch of initial idea" width = "300">
 
-#### Different Font
+### Different Font
 
 When adding more letters to my sketch idea, they began to look like messy scribbles not a refined typeface.
 
@@ -58,7 +58,7 @@ I chose to continue with the brush calligraphy font, as I thought that this font
 <img src = "/assets/blueOrangeBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "300">
 <img src = "/assets/blueOrangeYinYang.png" alt = "Yin yang font in a orange and blue colour palette" width = "300">
 
-#### [Alphabet](alphabet.html)
+### [Alphabet](alphabet.html)
 
 Initial Alphabet:
 
@@ -74,7 +74,7 @@ The final alphabet utilises the forms of the two beziers to create a cleaner, co
 
 Because the code to draw the letterforms and the parameters is better suited to letters with two parts and either vertical or curved shapes, some letters and numbers such as m, z, 1, 2, 5, and 7, are less refined and readable than the rest of the alphabet.
 
-#### [Interpolation](interaction.html)
+### [Interpolation](interaction.html)
 
 After adding the linear interpolation, I explored using twisting, reflecting, and growing motions to reflect the tapering shape of the letters.
 
@@ -100,7 +100,7 @@ I found that using the existing parameters for interpolation had better results.
 
 <img src = "/assets/twistInitial.jpg" alt = "Twisting lined bezier, and shortening solid bezier letters" width = "300">
 
-#### Styling
+### Styling
 After creating the letterform shapes and interpolation, I wanted to work on the aesthetics of the letterforms, colour palette, and background to make exhibition more visually pleasing.
 
 To create more depth within the letters themselves I added a gradient, referencing [odmundeetgen's gradient lines code](https://editor.p5js.org/odmundeetgen/sketches/qqmp0fVSK). I found that this gradient effect worked better for the lined beziers when there were five thinner curves rather than the three.

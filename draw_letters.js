@@ -26,7 +26,7 @@ function drawLetter(letterData) {
 /* lined bezier curves */
 function lined(letterData){
   // lined bezier parameters
-  let opacity = letterData["opacity"]; 
+  let opacity = letterData["opacity"]; // alpha value
   let linedX1 = letterData["linedVar1"]; // first anchor x 
   let linedY1 = letterData["linedVar2"]; // first anchor y
   let linedX2 = letterData["linedVar3"]; // first control point x
