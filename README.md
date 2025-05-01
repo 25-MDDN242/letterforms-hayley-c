@@ -103,7 +103,19 @@ I found that using the existing parameters for interpolation had better results.
 ### Styling
 After creating the letterform shapes and interpolation, I wanted to work on the aesthetics of the letterforms, colour palette, and background to make exhibition more visually pleasing.
 
-To create more depth within the letters themselves I added a gradient, referencing [odmundeetgen's gradient lines code](https://editor.p5js.org/odmundeetgen/sketches/qqmp0fVSK). I found that this gradient effect worked better for the lined beziers when there were five thinner curves rather than the three.
+To create more depth within the letters themselves I added a gradient, referencing [odmundeetgen's gradient lines code](https://editor.p5js.org/odmundeetgen/sketches/qqmp0fVSK).
+
+'''
+  var grad = this.drawingContext.createLinearGradient(linedX1, linedY1, linedX4, linedY4);
+  grad.addColorStop(0, white);
+  grad.addColorStop(.4, white25);
+  grad.addColorStop(.5, white15);
+  grad.addColorStop(.6, white25);
+  grad.addColorStop(1, white);
+  this.drawingContext.strokeStyle = grad;
+'''
+
+ I found that this gradient effect worked better for the lined beziers when there were five thinner curves rather than the three.
 
 From feedback I received, I explored some different colour palettes.
 
