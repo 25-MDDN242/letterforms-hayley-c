@@ -28,7 +28,7 @@ const alphabet = {
     "linedVar3": -25,
     "linedVar4": 35,
     "linedVar5": -10,
-    "linedVar6": 250,
+    "linedVar6": 265,
     "linedVar7": 75,
     "linedVar8": 175,
   
@@ -49,7 +49,7 @@ const alphabet = {
     "linedVar3": 105,
     "linedVar4": 35,
     "linedVar5": 100,
-    "linedVar6": 250,
+    "linedVar6": 263,
     "linedVar7": 20,
     "linedVar8": 175,
   
@@ -67,20 +67,20 @@ const alphabet = {
 
     "linedVar1": 85,
     "linedVar2": 120,
-    "linedVar3": -25,
-    "linedVar4": 35,
-    "linedVar5": -10,
-    "linedVar6": 250,
-    "linedVar7": 85,
-    "linedVar8": 185,
+    "linedVar3": 35,
+    "linedVar4": 70,
+    "linedVar5": -22,
+    "linedVar6": 145,
+    "linedVar7": 28,
+    "linedVar8": 175,
   
     "solidVar1": 8,
     "solidVar2": 140,
-    "solidVar3": 26,
+    "solidVar3": 15,
     "solidVar4": 185,
     "solidVar5": 42.5,
-    "solidVar6": 212,
-    "solidVar7": 85,
+    "solidVar6": 220,
+    "solidVar7": 90,
     "solidVar8": 185
   },
   "D": {
@@ -91,7 +91,7 @@ const alphabet = {
     "linedVar3": -30,
     "linedVar4": 35,
     "linedVar5": -15,
-    "linedVar6": 250,
+    "linedVar6": 265,
     "linedVar7": 75,
     "linedVar8": 175,
 
@@ -108,22 +108,22 @@ const alphabet = {
   "E": {
     "opacity": 100,
 
-    "linedVar1": 11,
-    "linedVar2": 135,
-    "linedVar3": 55,
-    "linedVar4": 50,
-    "linedVar5": 137,
-    "linedVar6": 205,
+    "linedVar1": 8,
+    "linedVar2": 137,
+    "linedVar3": 58,
+    "linedVar4": 43,
+    "linedVar5": 142,
+    "linedVar6": 208,
     "linedVar7": 10,
     "linedVar8": 150,
     
-    "solidVar1": 13.5,
-    "solidVar2": 128,
-    "solidVar3": -8,
-    "solidVar4": 190,
+    "solidVar1": 8,
+    "solidVar2": 135,
+    "solidVar3": -4,
+    "solidVar4": 195,
     "solidVar5": 70,
-    "solidVar6": 220,
-    "solidVar7": 92,
+    "solidVar6": 225,
+    "solidVar7": 94,
     "solidVar8": 170
   },
   "F": {
@@ -152,10 +152,10 @@ const alphabet = {
 
     "linedVar1": 80,
     "linedVar2": 125,
-    "linedVar3": -25,
+    "linedVar3": -22,
     "linedVar4": 35,
-    "linedVar5": -10,
-    "linedVar6": 250,
+    "linedVar5": -15,
+    "linedVar6": 265,
     "linedVar7": 75,
     "linedVar8": 175,
 
@@ -270,7 +270,7 @@ const alphabet = {
     "solidVar4": 179,
     "solidVar5": 33,
     "solidVar6": 145,
-    "solidVar7": 49,
+    "solidVar7": 48,
     "solidVar8": 50
   },
   "M": {
@@ -323,9 +323,9 @@ const alphabet = {
     "linedVar3": -15,
     "linedVar4": 85,
     "linedVar5": -10,
-    "linedVar6": 240,
+    "linedVar6": 230,
     "linedVar7": 65,
-    "linedVar8": 190,
+    "linedVar8": 195,
   
     "solidVar1": 45,
     "solidVar2": 100,
@@ -334,7 +334,7 @@ const alphabet = {
     "solidVar5": 95,
     "solidVar6": 230,
     "solidVar7": 30,
-    "solidVar8": 190
+    "solidVar8": 195
   },
   "P": {
     "opacity": 100,
@@ -344,7 +344,7 @@ const alphabet = {
     "linedVar3": 105,
     "linedVar4": 35,
     "linedVar5": 100,
-    "linedVar6": 250,
+    "linedVar6": 263,
     "linedVar7": 20,
     "linedVar8": 175,
 
@@ -365,7 +365,7 @@ const alphabet = {
     "linedVar3": -25,
     "linedVar4": 35,
     "linedVar5": -10,
-    "linedVar6": 250,
+    "linedVar6": 265,
     "linedVar7": 75,
     "linedVar8": 175,
 
@@ -411,10 +411,10 @@ const alphabet = {
     "linedVar7": 53,
     "linedVar8": 150,
   
-    "solidVar1": 25,
+    "solidVar1": 33,
     "solidVar2": 151.5,
     "solidVar3": 115,
-    "solidVar4": 130,
+    "solidVar4": 133,
     "solidVar5": 75,
     "solidVar6": 250,
     "solidVar7": 5,
@@ -468,19 +468,19 @@ const alphabet = {
     "linedVar1": 55,
     "linedVar2": 195,
     "linedVar3": -5,
-    "linedVar4": 190,
+    "linedVar4": 195,
     "linedVar5": 30,
     "linedVar6": 120,
     "linedVar7": 5,
     "linedVar8": 100,
 
-    "solidVar1": 50,
-    "solidVar2": 195,
+    "solidVar1": 46,
+    "solidVar2": 197,
     "solidVar3": 85,
     "solidVar4": 205,
     "solidVar5": 70,
     "solidVar6": 115,
-    "solidVar7": 95,
+    "solidVar7": 97,
     "solidVar8": 100
   },
   "W": {
@@ -495,8 +495,8 @@ const alphabet = {
     "linedVar7": 25,
     "linedVar8": 100,
 
-    "solidVar1": 55,
-    "solidVar2": 137,
+    "solidVar1": 54,
+    "solidVar2": 136.5,
     "solidVar3": 65,
     "solidVar4": 275,
     "solidVar5": 110,
@@ -564,7 +564,7 @@ const alphabet = {
     "solidVar4": 230,
     "solidVar5": 40,
     "solidVar6": 145,
-    "solidVar7": 10,
+    "solidVar7": 8,
     "solidVar8": 200
   },
   "0": {
@@ -575,18 +575,18 @@ const alphabet = {
     "linedVar3": -30,
     "linedVar4": 35,
     "linedVar5": -15,
-    "linedVar6": 250,
+    "linedVar6": 240,
     "linedVar7": 65,
-    "linedVar8": 190,
+    "linedVar8": 193,
   
-    "solidVar1": 45,
-    "solidVar2": 40,
+    "solidVar1": 50,
+    "solidVar2": 42,
     "solidVar3": 115,
     "solidVar4": 15,
     "solidVar5": 100,
     "solidVar6": 240,
-    "solidVar7": 30,
-    "solidVar8": 190
+    "solidVar7": 32,
+    "solidVar8": 193
   },
   "1": {
     "opacity": 100,
@@ -601,7 +601,7 @@ const alphabet = {
     "linedVar8": 175,
 
     "solidVar1": 60,
-    "solidVar2": 195,
+    "solidVar2": 193,
     "solidVar3": 10,
     "solidVar4": 170,
     "solidVar5": 110,
@@ -644,12 +644,12 @@ const alphabet = {
 
     "solidVar1": 5,
     "solidVar2": 170,
-    "solidVar3": 65,
+    "solidVar3": 62,
     "solidVar4": 255,
     "solidVar5": 145,
     "solidVar6": 120,
-    "solidVar7": 20,
-    "solidVar8": 120,
+    "solidVar7": 35,
+    "solidVar8": 119,
   },
   "4": {
     "opacity": 100,
@@ -691,7 +691,7 @@ const alphabet = {
     "solidVar5": 45,
     "solidVar6": 55,
     "solidVar7": 15,
-    "solidVar8": 125
+    "solidVar8": 126
   },
   "6": {
     "opacity": 100,
@@ -768,8 +768,8 @@ const alphabet = {
     "linedVar7": 75,
     "linedVar8": 105,
 
-    "solidVar1": 60,
-    "solidVar2": 45,
+    "solidVar1": 50,
+    "solidVar2": 38,
     "solidVar3": 135,
     "solidVar4": 55,
     "solidVar5": 35,

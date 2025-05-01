@@ -58,13 +58,13 @@ I returned to the sketch's code and altered it to create a  font similar to mode
 Unssure which font to continue developing, I tried a clashing colour palette to help myself decide. 
 I chose to continue with the brush calligraphy font, as I thought that this font looks better regardless of the colour palette. This style also allows me to better refine each of the letters to create a readable and cohesive typeface.
 
-<img src = "/assets/blueOrangeBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "250">
-<img src = "/assets/blueOrangeYinYang.png" alt = "Yin yang font in a orange and blue colour palette" width = "250">
+<img src = "/assets/blueOrangeBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "500">
+<img src = "/assets/blueOrangeYinYang.png" alt = "Yin yang font in a orange and blue colour palette" width = "500">
 
 #### [Alphabet](alphabet.html)
 
 Initial Alphabet:
-<img src = "/assets/initial alphabet.jpg" alt = "Initial alphabet iteration" width = "500">
+<img src = "/assets/initialAlphabet.jpg" alt = "Initial alphabet iteration" width = "500">
 
 Final Alphabet:
 
