@@ -5,7 +5,7 @@
 Swirling is a set of letterforms created using parameterized bezier curves and shapes, to create an airy and whimsical typeface that is reminiscent of a swirling breeze. The letters are swept away by the wind in a twisting motion to be replaced by a new letter.
 
 #### Technical notes
-Swirling is formed from 17 parameters. The eight anchor point and eight control points to determine the letterforms bezier shapes, as well as the alpha value to control the letters' opacity.
+Swirling is formed from 17 parameters. The eight anchor points and eight control points to determine the letterforms bezier shapes, as well as the alpha value to control the letters' opacity.
 
 The 17 parameters per letter are:
 * 'opacity': Alpha value
@@ -26,7 +26,7 @@ The 17 parameters per letter are:
 * 'solidVar7': Solid bezier second anchor point X
 * 'solidVar8': Solid bezier second anchor point Y
 
-Note: Interaction.html does not highlight the complete interpolation of the lined bezier curves, as the letters reach the target coordinates at 33% and 66%. Therefore, the interpolation is is not shown to its full extent.
+Note: interaction.html does not highlight the complete interpolation of the lined bezier curves, as the letters reach the target coordinates at 33% and 66%. Therefore, the interpolation is is not shown to its full extent.
 
 ## Process
 
@@ -108,16 +108,16 @@ To create more depth within the letters themselves I added a gradient, referenci
 From feedback I received, I explored some different colour palettes.
 
 * A grey blue background: Quite dull
-<img src = "/assets/greyBlue.png" alt = "Grey blue background with twisting font" width = "300">
+<img src = "/assets/greyBlue.jpg" alt = "Grey blue background with twisting font" width = "300">
 
 * A bright blue background: Felt a bit unnatural
-<img src = "/assets/brightBlue.jpg" alt = "Bright blue background with twisting font" width = "300">
+<img src = "/assets/brightBlue.png" alt = "Bright blue background with twisting font" width = "300">
 
 * A mint green background with teal, pink, and purple font: Gradient didn't always show properly
 <img src = "/assets/featherColour.jpg" alt = "Teal, pink, and purple feather font" width = "300">
 
 * Medium blue background with background decoration: Felt quite corporate
-<img src = "/assets/brightBlue.jpg" alt = "Medium blue background with twisting font" width = "300">
+<img src = "/assets/mediumBlue.jpg" alt = "Medium blue background with twisting font" width = "300">
 
 The final colour palette I chose is a white font on a periwinkle background, as the muted tone matched the airy and calming shape of the letters, while the purple tint added a sense of whimsy and playfulness.
 
