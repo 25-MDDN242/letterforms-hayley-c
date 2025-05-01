@@ -105,7 +105,7 @@ After creating the letterform shapes and interpolation, I wanted to work on the 
 
 To create more depth within the letters themselves I added a gradient, referencing [odmundeetgen's gradient lines code](https://editor.p5js.org/odmundeetgen/sketches/qqmp0fVSK).
 
-'''
+```
   var grad = this.drawingContext.createLinearGradient(linedX1, linedY1, linedX4, linedY4);
   grad.addColorStop(0, white);
   grad.addColorStop(.4, white25);
@@ -113,7 +113,7 @@ To create more depth within the letters themselves I added a gradient, referenci
   grad.addColorStop(.6, white25);
   grad.addColorStop(1, white);
   this.drawingContext.strokeStyle = grad;
-'''
+```
 
  I found that this gradient effect worked better for the lined beziers when there were five thinner curves rather than the three.
 
