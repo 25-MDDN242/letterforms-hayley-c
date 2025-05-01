@@ -1,13 +1,9 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#8F99FB";
+var systemBackgroundColor = "#8F99FB"; // periwinkle background
 var systemLineColor = "#D3D3D3";
 var systemBoxColor = "#C73869";
 
 /* internal constants */
-const secondSpacing = 5; // space between first outer bezier and second bezier
-const thirdSpacing = 10; // space between first outer bezier and third bezier 
-const fourthSpacing = 15; // space between first outer bezier and fourth bezier 
-const fifthSpacing = 20; // space between first outer bezier and fifth bezier
 const solidSpacing = 15; // space from centre of solid bezier shape
 
 /*
@@ -29,7 +25,6 @@ function drawLetter(letterData) {
 
 /* lined bezier curves */
 function lined(letterData){
-
   // lined bezier parameters
   let opacity = letterData["opacity"]; 
   let linedX1 = letterData["linedVar1"]; // first anchor x 
@@ -53,21 +48,19 @@ function lined(letterData){
   grad.addColorStop(.6, white25);
   grad.addColorStop(1, white);
 
-  push();
-  this.drawingContext.strokeStyle = grad; // gradient stroke colour
+  // space from outer bezier curve
+  let spacingArray = [0, 5, 10, 15, 20];
+
   strokeWeight(1.25); // stroke weight
   noFill(); // no fill
-  // first(outer) bezier
-  bezier(linedX1, linedY1, linedX2, linedY2, linedX3, linedY3, linedX4, linedY4);
-  // second bezier
-  bezier(linedX1, linedY1, linedX2 + secondSpacing, linedY2 + secondSpacing, linedX3 + secondSpacing, linedY3 - secondSpacing, linedX4, linedY4);
-  // third bezier
-  bezier(linedX1, linedY1, linedX2 + thirdSpacing, linedY2 + thirdSpacing, linedX3 + thirdSpacing, linedY3 - thirdSpacing, linedX4, linedY4);
-  // fourth bezier
-  bezier(linedX1, linedY1, linedX2 + fourthSpacing, linedY2 + fourthSpacing, linedX3 + fourthSpacing, linedY3 - fourthSpacing, linedX4, linedY4);
-  // fifth bezier
-  bezier(linedX1, linedY1, linedX2 + fifthSpacing, linedY2 + fifthSpacing, linedX3 + fifthSpacing, linedY3 - fifthSpacing, linedX4, linedY4);
-  pop();
+  this.drawingContext.strokeStyle = grad; // gradient stroke colour
+
+  // bezier curves
+  for (let i = 0; i <spacingArray.length; i++){
+    push();
+    bezier(linedX1, linedY1, linedX2 + spacingArray[i], linedY2 + spacingArray[i], linedX3 + spacingArray[i], linedY3 - spacingArray[i], linedX4, linedY4);
+    pop();
+  }
 }
 
 /* solid bezier curve */
@@ -179,19 +172,20 @@ function interpolate_letter(percent, oldObj, newObj) {
 }
 
 var swapWords = [
-  "TWISTING",
-  "FEATHERY",
-  "WHISPERS",
   "SWIRLING",
+  "TWISTING",
   "!BREEZE!",
   "SPIRALED",
+  "TWIRLING",
+  "AIRINESS",
   "!CLOUDY!",
   "WHIRLING",
   "!FLURRY!",
-  "TWIRLING",
+  "FEATHERY",
+  "WHISPERS",
   "FLOATING",
+  "WISPILY!",
   "DRIFTING",
-  "CYCLONE!",
   "!034689!"
 ]
 

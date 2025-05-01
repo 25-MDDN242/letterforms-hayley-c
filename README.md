@@ -2,12 +2,13 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18842563&assignment_repo_type=AssignmentRepo)
 ## MDDN 242 2025 Assignment 2
 
-### TITLE
-Description
+### Swirling
+#### By Hayley Chung
 
-The characters in my alphabet are composed of bezier curves and shapes. The solid shape creates the dominant downstroke, and the lined shape forms the secondary part.
+Swirling is a set of letterforms created using parameterized bezier curves and shapes, to create an airy and whimsical typeface that is reminiscent of a swirling breeze. The letters are swept away by the wind in a twisting motion to be replaced by a new letter.
 
-All together, the typeface is formed from 17 parameters. The beziers' anchor points and control points are all controlled by parameters, totalling 16 parameters for the letter shapes. For the purpoose of the interpolation, I have used a parameter for the alpha value to control the opacty. 
+#### Technical notes
+Swirling is formed from 17 parameters. The eight anchor point and eight control points to determine the letterforms bezier shapes, as well as the alpha value to control the letters' opacity.
 
 The 17 parameters per letter are:
 * 'opacity': Alpha value
@@ -28,8 +29,7 @@ The 17 parameters per letter are:
 * 'solidVar7': Solid bezier second anchor point X
 * 'solidVar8': Solid bezier second anchor point Y
 
-The letters interpolate through a twisting motion, making the old letter appear to be whisked away before forming the new letter.
-It is worth noting that interaction.html does not highlight the complete interpolation of the lined bezier curves, as the  
+Note: Interaction.html does not highlight the complete interpolation of the lined bezier curves, as the letters reach the target coordinates at 33% and 66%. Therefore, the interpolation is is not shown to its full extent.
 
 ### Process
 
@@ -55,7 +55,7 @@ I returned to the sketch's code and altered it to create a  font similar to mode
 
 <img src = "/assets/linedSolid.png" alt = "Solid and lined brush calligraphy font" width = "500">
 
-Unssure which font to continue developing, I tried a clashing colour palette to help myself decide. 
+Unsure which font to continue developing, I tried a clashing colour palette to help myself decide. 
 I chose to continue with the brush calligraphy font, as I thought that this font looks better regardless of the colour palette. This style also allows me to better refine each of the letters to create a readable and cohesive typeface.
 
 <img src = "/assets/blueOrangeBrush.png" alt = "Brushstroke font in a orange and blue colour palette" width = "500">
@@ -99,9 +99,23 @@ After creating the letterform shapes and interpolation, I thought
 
 I wanted to create more depth within the letters themselves. so I added a gradient, referencing [odmundeetgen's gradient lines code](https://editor.p5js.org/odmundeetgen/sketches/qqmp0fVSK). I found that this gradient effect worked better for the lined beziers when there were five thinner curves rather than the three.
 
-I explored some colour palette feedback with a teal, pink, and purple font, taking inspiration from hummingbird feathers.
+From the feedback I received I explored many different colour palettes.
+
+* A grey blue background: Quite dull
+<img src = "/assets/greyBlue.jpg" alt = "Grey blue background with twisting font" width = "500">
+
+* A bright blue background: Felt a bit unnatural
+<img src = "/assets/brightBlue.jpg" alt = "Bright blue background with twisting font" width = "500">
+
+* A mint green background with teal, pink, and purple font: Gradient didn't always show properly
 <img src = "/assets/featherColour.jpg" alt = "Teal, pink, and purple feather font" width = "500">
 
-<img src = "/assets/withBackground.jpg" alt = "Slower twisting blue letters on a cream background" width = "500">
+* Medium blue background with background decoration: Felt quite corporate
+<img src = "/assets/brightBlue.jpg" alt = "Medium blue background with twisting font" width = "500">
+
+The final colour palette I chose is a white font on a periwinkle background, as the muted tone matched the airy and calming shape of the letters, while the purple tint added a sense of whimsy and playfulness.
+
+<img src = "/assets/swirling.jpg" alt = "Periwinkle background with twisting font" width = "500">
+
 
 
