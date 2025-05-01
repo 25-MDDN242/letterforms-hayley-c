@@ -1,9 +1,6 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/m3rrFl41)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=18842563&assignment_repo_type=AssignmentRepo)
-## MDDN242 Project 2: Parametric Design
-
-### Swirling
-#### By Hayley Chung
+## MDDN242 Project 2: Parametric Design <br> Swirling, by Hayley Chung
 
 Swirling is a set of letterforms created using parameterized bezier curves and shapes, to create an airy and whimsical typeface that is reminiscent of a swirling breeze. The letters are swept away by the wind in a twisting motion to be replaced by a new letter.
 
