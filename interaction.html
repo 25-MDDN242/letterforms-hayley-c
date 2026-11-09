@@ -1,5 +1,11 @@
 <!-- This HTML file displays the "interaction" page -->
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+    <!-- Connects the CSS file -->
+    <link rel="stylesheet" href="style.css">
+
     <script language="javascript" type="text/javascript" src="p5_1.11.3.js"></script>
     <script language="javascript" type="text/javascript" src="z_purview_helper.js"></script>
     <script language="javascript" type="text/javascript" src="letters.js"></script>
@@ -22,13 +28,6 @@
     <li><a href="index.html">exhibition</a>
 <ul>
 
-<script>
-  const sendHeight = () => {
-    const height = Math.ceil(document.body.getBoundingClientRect().height);
-    parent.postMessage({ type: "resize", height }, "*");
-  };
-  new ResizeObserver(sendHeight).observe(document.body);
-  addEventListener("load", sendHeight);
-</script>
-
 </body>
+
+</html>
