@@ -1,15 +1,19 @@
-.iframe-container {
-  position: relative;
-  width: 100%;
-  padding-top: 100%; /* 16:9 Aspect Ratio (Change to 100% for a square 1:1) */
+/* Container defines the actual size you want to show on your page */
+.scaled-frame-container {
+  width: 400px;
+  height: 300px;
+  border: 1px solid #ccc;
   overflow: hidden;
+  position: relative;
 }
 
-.iframe-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+/* The iframe is styled as a large desktop window, then shrunk down */
+.scaled-frame-container iframe {
+  width: 1200px;  /* 3x the container width */
+  height: 900px; /* 3x the container height */
   border: 0;
+  
+  /* Scale down by a ratio of 0.333 (400px / 1200px) */
+  transform: scale(0.3333);
+  transform-origin: 0 0; /* Keeps the iframe pinned to the top-left */
 }
