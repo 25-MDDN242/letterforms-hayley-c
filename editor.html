@@ -148,4 +148,11 @@
             </table>
         </div>
     </div>
+
+<script>
+  new ResizeObserver(() => {
+    parent.postMessage({ type: "resize", height: document.documentElement.scrollHeight }, "*");
+  }).observe(document.documentElement);
+</script>
+
 </body>
