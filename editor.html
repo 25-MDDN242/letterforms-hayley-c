@@ -150,9 +150,12 @@
     </div>
 
 <script>
-  new ResizeObserver(() => {
-    parent.postMessage({ type: "resize", height: document.documentElement.scrollHeight }, "*");
-  }).observe(document.documentElement);
+  const sendHeight = () => {
+    const height = Math.ceil(document.body.getBoundingClientRect().height);
+    parent.postMessage({ type: "resize", height }, "*");
+  };
+  new ResizeObserver(sendHeight).observe(document.body);
+  addEventListener("load", sendHeight);
 </script>
 
 </body>
