@@ -214,6 +214,53 @@ function draw () {
 
   background(systemBackgroundColor);
 
+  /* background decoration */
+
+  // background bezier coordinates array
+  let backgroundArray = [
+    [0, 0, 250, 300, 300, 0, 1000, 100, 300, 10, 250, 310, 0, 25],
+    [0, 125, 250, 400, 400, 25, 900, 150, 400, 35, 250, 410, 0, 150],
+    [0, 250, 250, 500, 500, 50, 800, 200, 500, 60, 250, 510, 0, 275],
+    [900, 0, 840, 200, 200, 500, -50, 475, 240, 510, 840, 240, 950, 0],
+    [600, 300, 500, 450, 400, 370, 300, 500, 400, 375, 500, 455, 615, 300],
+    [700, 250, 600, 500, 350, 420, 400, 500, 400, 425, 600, 505, 715, 250],
+    [825, 150, 725, 550, 275, 470, 525, 500, 400, 475, 725, 555, 840, 150],
+    [950, 100, 875, 600, 200, 520, 675, 500, 400, 525, 875, 605, 965, 100],
+    [1100, 50, 1025, 650, 125, 570, 825, 500, 400, 575, 1025, 655, 1115, 100]
+  ];
+
+  push();
+  colorMode(HSB, 360, 100, 100, 100);
+  noStroke();
+  fill(234, 38, 98, 100); // light periwinkle colour
+  
+  // draw backgound bezier curves
+  for (let i = 0; i < backgroundArray.length; i++){
+    let vertexX = backgroundArray[i][0];
+    let vertexY = backgroundArray[i][1];
+    let controlOneX = backgroundArray[i][2];
+    let controlOneY = backgroundArray[i][3];
+    let controlTwoX = backgroundArray[i][4];
+    let controlTwoY = backgroundArray[i][5];
+    let anchorOneX = backgroundArray[i][6];
+    let anchorOneY = backgroundArray[i][7];
+    let controlThreeX = backgroundArray[i][8];
+    let controlThreeY = backgroundArray[i][9];
+    let controlFourX = backgroundArray[i][10];
+    let controlFourY = backgroundArray[i][11];
+    let anchorTwoX = backgroundArray[i][12];
+    let anchorTwoY = backgroundArray[i][13];
+
+    beginShape();
+    vertex(vertexX, vertexY);
+    bezierVertex(controlOneX, controlOneY, controlTwoX, controlTwoY, anchorOneX, anchorOneY);
+    bezierVertex(controlThreeX, controlThreeY, controlFourX, controlFourY, anchorTwoX, anchorTwoY);
+    endShape();
+  }
+  filter(BLUR, 6); // blurring filter on background
+  pop();
+
+
   // shorthand variables to allow margin
   var o = 20
   var w2 = width - 2 * o
